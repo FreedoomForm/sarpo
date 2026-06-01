@@ -1223,18 +1223,18 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                         <div className="flex items-center">
                           <button
                             onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
-                            className="w-7 h-7 md:w-9 md:h-9 border border-gray-200 bg-white flex items-center justify-center hover:bg-gray-50 transition-colors text-xs md:text-sm"
+                            className="w-7 h-7 md:w-9 md:h-9 border border-gray-200 bg-white flex items-center justify-center hover:bg-gray-50 transition-colors text-xs md:text-sm rounded-none"
                           >
                             −
                           </button>
                           <div
-                            className="w-8 h-7 md:w-12 md:h-9 border-t border-b border-gray-200 bg-white flex items-center justify-center font-medium text-xs md:text-sm"
+                            className="w-8 h-7 md:w-12 md:h-9 border-t border-b border-gray-200 bg-white flex items-center justify-center font-medium text-xs md:text-sm rounded-none"
                           >
                             {item.quantity}
                           </div>
                           <button
                             onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
-                            className="w-7 h-7 md:w-9 md:h-9 border border-gray-200 bg-white flex items-center justify-center hover:bg-gray-50 transition-colors text-xs md:text-sm"
+                            className="w-7 h-7 md:w-9 md:h-9 border border-gray-200 bg-white flex items-center justify-center hover:bg-gray-50 transition-colors text-xs md:text-sm rounded-none"
                           >
                             +
                           </button>
@@ -1253,7 +1253,7 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                           className="p-1.5 text-[#1A1A1A] hover:text-red-500 transition-colors"
                           aria-label="Удалить"
                         >
-                          <Trash2 className="w-4 h-4 md:w-5 md:h-5" />
+                          <Trash2 className="w-4 h-4 md:w-5 md:h-5" strokeWidth={1.5} />
                         </button>
                       </div>
                     </div>
@@ -1276,7 +1276,7 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                 {items.length > 0 && (
                 <div className="w-full lg:w-[380px] md:w-[400px]">
                   <div
-                    className="p-5 md:p-8 rounded-md bg-white"
+                    className="p-5 md:p-8 bg-white"
                   >
                     <div className="flex justify-between items-center mb-5 md:mb-6">
                       <h2 className="text-lg md:text-xl font-medium text-[#1A1A1A]">
@@ -1292,10 +1292,10 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                           placeholder="Имя"
                           value={customerName}
                           onChange={(e) => setCustomerName(e.target.value)}
-                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded text-xs md:text-sm outline-none border-0 focus:ring-1 focus:ring-[#1A1A1A]"
-                          style={{ backgroundColor: '#F0F0F0' }}
+                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-sm text-xs md:text-sm outline-none border-0 focus:ring-1 focus:ring-[#1A1A1A]"
+                          style={{ backgroundColor: '#F2F2F2' }}
                         />
-                        <User className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-gray-400" />
+                        <User className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-[#666666]" />
                       </div>
                       <div className="relative">
                         <input
@@ -1303,10 +1303,10 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                           placeholder="Телефон"
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
-                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded text-xs md:text-sm outline-none border-0 focus:ring-1 focus:ring-[#1A1A1A]"
-                          style={{ backgroundColor: '#F0F0F0' }}
+                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-sm text-xs md:text-sm outline-none border-0 focus:ring-1 focus:ring-[#1A1A1A]"
+                          style={{ backgroundColor: '#F2F2F2' }}
                         />
-                        <Phone className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-gray-400" />
+                        <Phone className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-[#666666]" />
                       </div>
                       <div className="relative">
                         <input
@@ -1314,10 +1314,10 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                           placeholder="Адрес"
                           value={address}
                           onChange={(e) => setAddress(e.target.value)}
-                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded text-xs md:text-sm outline-none border-0 focus:ring-1 focus:ring-[#1A1A1A]"
-                          style={{ backgroundColor: '#F0F0F0' }}
+                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-sm text-xs md:text-sm outline-none border-0 focus:ring-1 focus:ring-[#1A1A1A]"
+                          style={{ backgroundColor: '#F2F2F2' }}
                         />
-                        <MapPin className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-gray-400" />
+                        <MapPin className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-[#666666]" />
                       </div>
                     </div>
 
@@ -1328,8 +1328,8 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                         <button
                           onClick={() => setPaymentMethod('payme')}
                           className={
-                            'rounded-md py-2.5 md:py-3 flex items-center justify-center gap-1.5 relative text-xs md:text-sm transition-all duration-300 ' +
-                            (paymentMethod === 'payme' ? 'bg-white border border-[#1A1A1A]' : 'bg-[#F0F0F0] border-0 hover:bg-gray-200')
+                            'py-2.5 md:py-3 flex items-center justify-center gap-1.5 relative text-xs md:text-sm transition-all duration-300 ' +
+                            (paymentMethod === 'payme' ? 'bg-white border border-[#1A1A1A]' : 'bg-[#F2F2F2] border-0 hover:bg-gray-200')
                           }
                         >
                           <span className="italic font-semibold" style={{ color: '#38B2AC' }}>payme</span>
@@ -1343,8 +1343,8 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                         <button
                           onClick={() => setPaymentMethod('click')}
                           className={
-                            'rounded-md py-2.5 md:py-3 flex items-center justify-center gap-1.5 relative text-xs md:text-sm transition-all duration-300 ' +
-                            (paymentMethod === 'click' ? 'bg-white border border-[#1A1A1A]' : 'bg-[#F0F0F0] border-0 hover:bg-gray-200')
+                            'py-2.5 md:py-3 flex items-center justify-center gap-1.5 relative text-xs md:text-sm transition-all duration-300 ' +
+                            (paymentMethod === 'click' ? 'bg-white border border-[#1A1A1A]' : 'bg-[#F2F2F2] border-0 hover:bg-gray-200')
                           }
                         >
                           <span className="font-semibold" style={{ color: '#3182CE' }}>click</span>
@@ -1358,8 +1358,8 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                         <button
                           onClick={() => setPaymentMethod('cash')}
                           className={
-                            'rounded-md py-2.5 md:py-3 flex items-center justify-center gap-1.5 relative text-xs md:text-sm transition-all duration-300 ' +
-                            (paymentMethod === 'cash' ? 'bg-white border border-[#1A1A1A]' : 'bg-[#F0F0F0] border-0 hover:bg-gray-200')
+                            'py-2.5 md:py-3 flex items-center justify-center gap-1.5 relative text-xs md:text-sm transition-all duration-300 ' +
+                            (paymentMethod === 'cash' ? 'bg-white border border-[#1A1A1A]' : 'bg-[#F2F2F2] border-0 hover:bg-gray-200')
                           }
                         >
                           <Wallet className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#666666]" />
@@ -1374,8 +1374,8 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                         <button
                           onClick={() => setPaymentMethod('card')}
                           className={
-                            'rounded-md py-2.5 md:py-3 flex items-center justify-center gap-1.5 relative text-xs md:text-sm transition-all duration-300 ' +
-                            (paymentMethod === 'card' ? 'bg-white border border-[#1A1A1A]' : 'bg-[#F0F0F0] border-0 hover:bg-gray-200')
+                            'py-2.5 md:py-3 flex items-center justify-center gap-1.5 relative text-xs md:text-sm transition-all duration-300 ' +
+                            (paymentMethod === 'card' ? 'bg-white border border-[#1A1A1A]' : 'bg-[#F2F2F2] border-0 hover:bg-gray-200')
                           }
                         >
                           <ShoppingBag className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#666666]" />
@@ -1400,7 +1400,7 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                     {/* Связаться с оператором */}
                     <button
                       onClick={() => window.open('tel:+998901234567')}
-                      className="w-full flex items-center justify-center gap-2 py-3 md:py-4 font-medium rounded-md transition-all duration-300 tracking-wide border-2 border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white mb-3"
+                      className="w-full flex items-center justify-center gap-2 py-3 md:py-4 font-medium transition-all duration-300 tracking-wide border-2 border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white mb-3"
                     >
                       <Phone className="w-4 h-4 md:w-5 md:h-5" />
                       Связаться с оператором
@@ -1409,7 +1409,7 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                     <button
                       onClick={handleOrder}
                       disabled={orderLoading || items.length === 0}
-                      className="w-full text-white py-3 md:py-4 font-medium rounded-md transition-colors tracking-wide hover:bg-[#1A1A1A] disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full text-white py-3 md:py-4 font-medium transition-colors tracking-wide hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
                       style={{ backgroundColor: '#1A1A1A' }}
                     >
                       {orderLoading ? 'Оформление...' : 'Оформить заказ'}
