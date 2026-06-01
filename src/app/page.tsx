@@ -1250,10 +1250,10 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                       <div className="col-span-1 flex justify-center items-center" onClick={(e) => e.stopPropagation()}>
                         <button
                           onClick={() => removeItem(item.product.id)}
-                          className="p-1.5 text-[#1A1A1A] hover:text-red-500 transition-colors"
+                          className="p-1.5 group/delete transition-colors"
                           aria-label="Удалить"
                         >
-                          <Trash2 className="w-4 h-4 md:w-5 md:h-5" strokeWidth={1.5} />
+                          <img src="/images/cart-icon.svg" alt="Удалить" className="w-4 h-5 md:w-5 md:h-6 group-hover/delete:[filter:invert(27%)_sepia(96%)_saturate(2476%)_hue-rotate(349deg)_brightness(95%)_contrast(97%)]" draggable={false} />
                         </button>
                       </div>
                     </div>
@@ -1292,7 +1292,7 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                           placeholder="Имя"
                           value={customerName}
                           onChange={(e) => setCustomerName(e.target.value)}
-                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-sm text-xs md:text-sm outline-none border-0 focus:ring-1 focus:ring-[#1A1A1A]"
+                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-none text-xs md:text-sm outline-none border-0 focus:ring-1 focus:ring-[#1A1A1A]"
                           style={{ backgroundColor: '#F2F2F2' }}
                         />
                         <User className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-[#666666]" />
@@ -1303,7 +1303,7 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                           placeholder="Телефон"
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
-                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-sm text-xs md:text-sm outline-none border-0 focus:ring-1 focus:ring-[#1A1A1A]"
+                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-none text-xs md:text-sm outline-none border-0 focus:ring-1 focus:ring-[#1A1A1A]"
                           style={{ backgroundColor: '#F2F2F2' }}
                         />
                         <Phone className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-[#666666]" />
@@ -1314,7 +1314,7 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                           placeholder="Адрес"
                           value={address}
                           onChange={(e) => setAddress(e.target.value)}
-                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-sm text-xs md:text-sm outline-none border-0 focus:ring-1 focus:ring-[#1A1A1A]"
+                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-none text-xs md:text-sm outline-none border-0 focus:ring-1 focus:ring-[#1A1A1A]"
                           style={{ backgroundColor: '#F2F2F2' }}
                         />
                         <MapPin className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-[#666666]" />
