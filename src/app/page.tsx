@@ -173,10 +173,9 @@ function Header({ onNavigate, currentPage, onSearch, onCollectionNavigate, onCon
             <button
               onClick={() => onNavigate('cart')}
               className="bg-white p-2 md:p-2.5 rounded-full relative hover:scale-105 transition-transform"
-              style={{ color: '#1A1A1A' }}
               aria-label="Корзина"
             >
-              <ShoppingBag className="w-4 h-4 md:w-5 md:h-5" />
+              <img src="/images/cart-icon.svg" alt="Корзина" className="w-4 h-4 md:w-5 md:h-5" draggable={false} />
               {cartCount > 0 && (
                 <span className="absolute -top-1 -right-1 bg-[#1A1A1A] text-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center">
                   {cartCount}
