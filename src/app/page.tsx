@@ -18,6 +18,7 @@ import {
   Twitter,
   Menu,
   X,
+  Trash2,
 } from 'lucide-react';
 import { Product, formatPrice } from '@/lib/sarpo-data';
 import { useProducts, useHeroSlides, useCollections, useProductGallery, useRecommendedProducts, useNewProducts, apiPostDirect } from '@/lib/use-api-data';

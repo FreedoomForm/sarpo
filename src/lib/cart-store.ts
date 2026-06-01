@@ -21,6 +21,7 @@ interface CartState {
   completedOrders: CompletedOrder[];
   addItem: (product: Product, quantity?: number) => void;
   updateQuantity: (productId: string, quantity: number) => void;
+  removeItem: (productId: string) => void;
   moveToCompleted: (orderId: string, customer: { name: string; phone: string; address: string }, paymentMethod: string) => void;
   clearCompleted: () => void;
   totalItems: () => number;
@@ -53,6 +54,11 @@ export const useCartStore = create<CartState>()(
           items: state.items.map((item) =>
             item.product.id === productId ? { ...item, quantity } : item
           ),
+        }));
+      },
+      removeItem: (productId) => {
+        set((state) => ({
+          items: state.items.filter((item) => item.product.id !== productId),
         }));
       },
       moveToCompleted: (orderId, customer, paymentMethod) => {
