@@ -1229,8 +1229,7 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                             −
                           </button>
                           <div
-                            className="w-8 h-7 md:w-12 md:h-9 flex items-center justify-center font-medium text-xs md:text-sm rounded-none text-white"
-                            style={{ backgroundColor: '#1A1A1A' }}
+                            className="w-8 h-7 md:w-12 md:h-9 border-t border-b border-[#999999] bg-white flex items-center justify-center font-medium text-xs md:text-sm rounded-none text-[#1A1A1A]"
                           >
                             {item.quantity}
                           </div>
