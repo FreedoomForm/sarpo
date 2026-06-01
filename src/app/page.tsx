@@ -777,6 +777,13 @@ function CatalogPage({
         {/* Sidebar — only takes space when open */}
         {filtersOpen && (
           <aside className="w-full md:w-56 lg:w-64 flex-shrink-0">
+            <button
+              onClick={() => setFiltersOpen(!filtersOpen)}
+              className="flex items-center justify-between w-full mb-5 md:mb-6 text-[#1A1A1A] bg-white rounded-md px-3 py-2.5 md:py-3 border border-gray-200 hover:border-[#1A1A1A] transition-colors cursor-pointer"
+            >
+              <span className="text-xs md:text-sm text-[#1A1A1A]">Фильтры</span>
+              <ChevronUp className="w-3.5 h-3.5 md:w-4 md:h-4 text-gray-500" />
+            </button>
             {filterContent}
           </aside>
         )}
@@ -786,20 +793,6 @@ function CatalogPage({
           {/* Search, Filter Button, and Sort Row */}
           <div className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center mb-5 md:mb-6 gap-3 md:gap-6">
             <div className="flex items-center gap-3 flex-1">
-              {/* Filter toggle button — on the left */}
-              <button
-                onClick={() => setFiltersOpen(!filtersOpen)}
-                className={`border bg-white rounded-md p-2.5 md:p-3 flex items-center gap-2 cursor-pointer transition-colors shrink-0 ${
-                  filtersOpen
-                    ? 'border-[#1A1A1A] text-[#1A1A1A]'
-                    : 'border-gray-200 text-[#1A1A1A] hover:border-[#1A1A1A]'
-                }`}
-              >
-                <SlidersHorizontal className="w-3.5 h-3.5 md:w-4 md:h-4" />
-                <span className="text-xs md:text-sm hidden sm:inline">Фильтры</span>
-              </button>
-
-              {/* Search */}
               <div className="flex-1 relative">
                 <input
                   type="text"
@@ -810,6 +803,15 @@ function CatalogPage({
                 />
                 <Search className="absolute left-3 md:left-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-gray-400" />
               </div>
+              {!filtersOpen && (
+                <button
+                  onClick={() => setFiltersOpen(true)}
+                  className="border border-gray-200 bg-white rounded-md p-2.5 md:p-3 flex items-center gap-2 cursor-pointer hover:border-[#1A1A1A] transition-colors shrink-0"
+                >
+                  <SlidersHorizontal className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#1A1A1A]" />
+                  <span className="text-xs md:text-sm text-[#1A1A1A] hidden sm:inline">Фильтры</span>
+                </button>
+              )}
             </div>
 
             {/* Sort dropdown — on the right */}
