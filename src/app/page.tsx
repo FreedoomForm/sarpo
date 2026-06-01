@@ -131,7 +131,7 @@ function Header({ onNavigate, currentPage, onSearch, onCollectionNavigate, onCon
                 className="h-10 md:h-14 w-auto select-none"
                 draggable={false}
               />
-              <span className="text-[10px] md:text-xs text-white/80 hidden md:block">Handmade for you!</span>
+
             </button>
           </div>
 
