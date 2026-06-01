@@ -775,6 +775,10 @@ function CatalogPage({
       <div className="flex gap-6 md:gap-10 flex-col md:flex-row">
         {/* Sidebar — always visible */}
         <aside className="w-full md:w-56 lg:w-64 flex-shrink-0">
+          <div className="flex items-center justify-between mb-4 md:mb-5 pb-3 md:pb-4 border-b border-gray-200">
+            <h3 className="text-sm md:text-base font-medium text-[#1A1A1A]">Фильтры</h3>
+            <SlidersHorizontal className="w-4 h-4 md:w-5 md:h-5 text-[#1A1A1A]" />
+          </div>
           {filterContent}
         </aside>
 
