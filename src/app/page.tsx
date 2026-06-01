@@ -127,7 +127,7 @@ function Header({ onNavigate, currentPage, onSearch, onCollectionNavigate, onCon
               className="flex items-center gap-2 py-2 md:py-3"
             >
               <img
-                src="/images/siluette_logo.png"
+                src="/images/siluet-logo.svg"
                 alt="SILUET BASIC"
                 className="h-8 md:h-10 w-auto select-none"
                 draggable={false}
