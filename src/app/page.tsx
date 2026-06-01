@@ -50,7 +50,7 @@ function BackButton({ onBack }: { onBack: () => void }) {
   return (
     <button
       onClick={onBack}
-      className="inline-flex items-center gap-2 text-sm md:text-base font-medium text-[#680018] hover:text-[#2D020C] transition-colors mb-4 md:mb-6 group"
+      className="inline-flex items-center gap-2 text-sm md:text-base font-medium text-[#1A1A1A] hover:text-[#333333] transition-colors mb-4 md:mb-6 group"
     >
       <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:-translate-x-1" strokeWidth={2} />
       Назад
@@ -109,7 +109,7 @@ function Header({ onNavigate, currentPage, onSearch, onCollectionNavigate, onCon
         {/* Top bar — ruby background */}
         <div
           className="text-white px-4 md:px-12 flex items-center justify-between relative"
-          style={{ backgroundColor: '#680018', minHeight: '56px' }}
+          style={{ backgroundColor: '#1A1A1A', minHeight: '56px' }}
         >
           {/* Left side: hamburger + logo */}
           <div className="flex items-center gap-1">
@@ -123,14 +123,15 @@ function Header({ onNavigate, currentPage, onSearch, onCollectionNavigate, onCon
 
             <button
               onClick={() => onNavigate('home')}
-              className="flex items-center py-2 md:py-3"
+              className="flex items-center gap-2 py-2 md:py-3"
             >
               <img
-                src="/images/sarpo_logo.svg"
-                alt="SARPO"
+                src="/images/siluette_logo.png"
+                alt="SILUET BASIC"
                 className="h-10 md:h-14 w-auto select-none"
                 draggable={false}
               />
+              <span className="text-[10px] md:text-xs text-white/80 hidden md:block">Handmade for you!</span>
             </button>
           </div>
 
@@ -140,7 +141,7 @@ function Header({ onNavigate, currentPage, onSearch, onCollectionNavigate, onCon
             <button
               onClick={() => onNavigate('catalog')}
               className="md:hidden bg-white p-2 rounded-full"
-              style={{ color: '#680018' }}
+              style={{ color: '#1A1A1A' }}
               aria-label="Поиск"
             >
               <Search className="w-4 h-4" />
@@ -148,7 +149,7 @@ function Header({ onNavigate, currentPage, onSearch, onCollectionNavigate, onCon
 
             {/* Desktop: Search form */}
             <form onSubmit={handleHeaderSearch} className="relative hidden md:block">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#680018]" />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#1A1A1A]" />
               <input
                 type="text"
                 placeholder="Search"
@@ -162,7 +163,7 @@ function Header({ onNavigate, currentPage, onSearch, onCollectionNavigate, onCon
             <button
               onClick={onContactClick}
               className="bg-white p-2 md:p-2.5 rounded-full hover:scale-105 transition-all duration-300"
-              style={{ color: '#680018' }}
+              style={{ color: '#1A1A1A' }}
               aria-label="Связаться с оператором"
             >
               <Phone className="w-4 h-4 md:w-5 md:h-5" />
@@ -171,12 +172,12 @@ function Header({ onNavigate, currentPage, onSearch, onCollectionNavigate, onCon
             <button
               onClick={() => onNavigate('cart')}
               className="bg-white p-2 md:p-2.5 rounded-full relative hover:scale-105 transition-transform"
-              style={{ color: '#680018' }}
+              style={{ color: '#1A1A1A' }}
               aria-label="Корзина"
             >
               <ShoppingBag className="w-4 h-4 md:w-5 md:h-5" />
               {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-[#680018] text-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 bg-[#1A1A1A] text-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center">
                   {cartCount}
                 </span>
               )}
@@ -189,7 +190,7 @@ function Header({ onNavigate, currentPage, onSearch, onCollectionNavigate, onCon
           className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
             menuOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'
           }`}
-          style={{ backgroundColor: '#680018' }}
+          style={{ backgroundColor: '#1A1A1A' }}
         >
           <div className="flex flex-col items-start gap-4 p-4">
             {collections.map((col) => (
@@ -199,14 +200,14 @@ function Header({ onNavigate, currentPage, onSearch, onCollectionNavigate, onCon
         </div>
 
         {/* Nav bar — warm beige background — hidden on mobile */}
-        <div style={{ backgroundColor: '#EFE6E1' }} className="border-b border-black/5 hidden md:block">
+        <div style={{ backgroundColor: '#F5F5F5' }} className="border-b border-black/5 hidden md:block">
           <nav className="max-w-[1400px] mx-auto px-4 md:px-12">
-            <ul className="flex items-center w-full justify-between py-3 md:py-4 text-xs md:text-[15px] text-[#1A1314] overflow-x-auto">
+            <ul className="flex items-center w-full justify-between py-3 md:py-4 text-xs md:text-[15px] text-[#1A1A1A] overflow-x-auto">
               {navLinks.map((link) => (
                 <li key={link.collection}>
                   <button
                     onClick={() => onCollectionNavigate(link.collection)}
-                    className="transition-colors hover:text-[#680018] whitespace-nowrap px-1"
+                    className="transition-colors hover:text-[#1A1A1A] whitespace-nowrap px-1"
                   >
                     {link.title}
                   </button>
@@ -225,7 +226,7 @@ function Footer({ onCollectionNavigate, collections }: { onCollectionNavigate: (
   return (
     <footer
       className="text-white pt-8 md:pt-16 pb-6 md:pb-8 px-4 md:px-12 mt-auto"
-      style={{ backgroundColor: '#2D020C' }}
+      style={{ backgroundColor: '#1A1A1A' }}
     >
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 border-b border-white/15 pb-10 md:pb-12 mb-8">
         <div>
@@ -269,7 +270,10 @@ function Footer({ onCollectionNavigate, collections }: { onCollectionNavigate: (
         </div>
       </div>
       <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-center text-xs text-white/50">
-        <p>&copy; 2026 SARPO. All rights reserved.</p>
+        <div className="flex flex-col items-center md:items-start">
+          <span className="text-white/70 text-[11px] mb-0.5">Handmade for you!</span>
+          <p>&copy; 2026 SILUET BASIC. All rights reserved.</p>
+        </div>
         <div className="flex gap-6 mt-4 md:mt-0">
           <span className="hover:text-white transition-colors cursor-pointer">Политика конфиденциальности</span>
           <span className="hover:text-white transition-colors cursor-pointer">Условия использования</span>
@@ -324,42 +328,42 @@ function ContactModal({ open, onClose }: { open: boolean; onClose: () => void })
     <Dialog open={open} onOpenChange={(v) => !v && onClose()}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="text-xl font-medium text-[#1A1314]">Связаться с оператором</DialogTitle>
+          <DialogTitle className="text-xl font-medium text-[#1A1A1A]">Связаться с оператором</DialogTitle>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4 mt-2">
           <div>
-            <label className="text-xs font-medium text-[#706567] mb-1.5 block">Имя</label>
+            <label className="text-xs font-medium text-[#666666] mb-1.5 block">Имя</label>
             <Input
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Ваше имя"
-              className="border-gray-200 focus:border-[#680018] focus:ring-[#680018]"
+              className="border-gray-200 focus:border-[#1A1A1A] focus:ring-[#1A1A1A]"
             />
           </div>
           <div>
-            <label className="text-xs font-medium text-[#706567] mb-1.5 block">Телефон</label>
+            <label className="text-xs font-medium text-[#666666] mb-1.5 block">Телефон</label>
             <Input
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               placeholder="+998 90 123 45 67"
-              className="border-gray-200 focus:border-[#680018] focus:ring-[#680018]"
+              className="border-gray-200 focus:border-[#1A1A1A] focus:ring-[#1A1A1A]"
             />
           </div>
           <div>
-            <label className="text-xs font-medium text-[#706567] mb-1.5 block">Сообщение</label>
+            <label className="text-xs font-medium text-[#666666] mb-1.5 block">Сообщение</label>
             <textarea
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Опишите ваш вопрос..."
               rows={4}
-              className="w-full border border-gray-200 rounded-md px-3 py-2 text-sm outline-none focus:border-[#680018] focus:ring-1 focus:ring-[#680018] resize-none"
+              className="w-full border border-gray-200 rounded-md px-3 py-2 text-sm outline-none focus:border-[#1A1A1A] focus:ring-1 focus:ring-[#1A1A1A] resize-none"
             />
           </div>
           <button
             type="submit"
             disabled={sending}
             className="w-full text-white py-3 font-medium tracking-wide rounded-sm transition-colors disabled:opacity-60"
-            style={{ backgroundColor: '#2D020C' }}
+            style={{ backgroundColor: '#1A1A1A' }}
           >
             {sending ? 'Отправка...' : 'Отправить'}
           </button>
@@ -398,7 +402,7 @@ function ProductCard({
         {product.category && (
         <div
           className="absolute bottom-2 left-2 md:bottom-3 md:left-3 text-white text-[9px] md:text-[11px] px-1.5 py-0.5 md:px-2.5 md:py-1 tracking-wide"
-          style={{ backgroundColor: '#680018' }}
+          style={{ backgroundColor: '#1A1A1A' }}
         >
           {product.category}
         </div>
@@ -407,17 +411,17 @@ function ProductCard({
         {product.isNew && (
           <div
             className="absolute top-3 -left-6 text-white text-[10px] font-medium px-6 py-0.5 -rotate-45 text-center w-28 shadow-sm tracking-wide"
-            style={{ backgroundColor: '#1A1314' }}
+            style={{ backgroundColor: '#1A1A1A' }}
           >
             Новинка
           </div>
         )}
       </div>
       <div className="mt-2 md:mt-3">
-        <h3 className="text-[11px] md:text-sm font-medium text-[#1A1314] line-clamp-1 group-hover:text-[#680018] transition-colors">
+        <h3 className="text-[11px] md:text-sm font-medium text-[#1A1A1A] line-clamp-1 group-hover:text-[#1A1A1A] transition-colors">
           {product.name}
         </h3>
-        <p className="text-[11px] md:text-sm text-[#706567] mt-1">
+        <p className="text-[11px] md:text-sm text-[#666666] mt-1">
           {formatPrice(product.price)}
         </p>
       </div>
@@ -455,14 +459,14 @@ function HomePage({
   if (loadingSlides || loadingRecommended || loadingNew) {
     return (
       <div className="flex items-center justify-center py-20">
-        <div className="w-8 h-8 border-4 border-[#680018] border-t-transparent rounded-full animate-spin" />
+        <div className="w-8 h-8 border-4 border-[#1A1A1A] border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
 
   if (heroSlides.length === 0 && recommendedProducts.length === 0 && newProducts.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center py-20 text-[#706567]">
+      <div className="flex flex-col items-center justify-center py-20 text-[#666666]">
         <p className="text-lg mb-2">Данные загружаются...</p>
         <p className="text-sm">Скоро здесь появятся товары</p>
       </div>
@@ -475,7 +479,7 @@ function HomePage({
       {heroSlides.length > 0 && (
       <section
         className="relative overflow-hidden"
-        style={{ backgroundColor: '#EFE6E1', minHeight: '280px' }}
+        style={{ backgroundColor: '#F5F5F5', minHeight: '280px' }}
       >
         <div className="absolute inset-0">
           {heroSlides.map((s, i) => (
@@ -495,7 +499,7 @@ function HomePage({
             className="absolute inset-y-0 left-0 w-full lg:w-3/5 pointer-events-none"
             style={{
               background:
-                'linear-gradient(to right, #EFE6E1 0%, #EFE6E1 30%, rgba(239,230,225,0.9) 45%, rgba(239,230,225,0.4) 65%, rgba(239,230,225,0) 80%)',
+                'linear-gradient(to right, #F5F5F5 0%, #F5F5F5 30%, rgba(245,245,245,0.9) 45%, rgba(245,245,245,0.4) 65%, rgba(245,245,245,0) 80%)',
             }}
           />
         </div>
@@ -503,11 +507,11 @@ function HomePage({
         <div className="relative max-w-[1400px] mx-auto px-4 md:px-12 py-8 md:py-20 lg:py-24 flex flex-col justify-center min-h-[280px] md:min-h-[500px]">
           <div className="w-full lg:w-1/2 xl:w-2/5">
             <h1
-              className="text-xl md:text-4xl lg:text-[44px] font-bold text-[#1A1314] mb-3 md:mb-6 leading-[1.1]"
+              className="text-xl md:text-4xl lg:text-[44px] font-bold text-[#1A1A1A] mb-3 md:mb-6 leading-[1.1]"
             >
               {slide?.title || ''}
             </h1>
-            <p className="text-[11px] md:text-sm lg:text-base text-[#1A1314]/85 mb-6 md:mb-10 max-w-lg leading-relaxed">
+            <p className="text-[11px] md:text-sm lg:text-base text-[#1A1A1A]/85 mb-6 md:mb-10 max-w-lg leading-relaxed">
               {slide?.subtitle || ''}
             </p>
           </div>
@@ -518,7 +522,7 @@ function HomePage({
         <div className="relative flex items-center justify-center gap-3 md:gap-6 w-full pb-4 md:pb-6">
           <button
             onClick={prev}
-            className="text-[#680018] hover:text-[#2D020C] transition-colors p-1"
+            className="text-[#1A1A1A] hover:text-[#333333] transition-colors p-1"
             aria-label="Назад"
           >
             <ArrowLeft className="w-6 h-6 md:w-10 md:h-10" strokeWidth={1.5} />
@@ -532,18 +536,18 @@ function HomePage({
                 aria-label={`Слайд ${i + 1}`}
               >
                 {i === slideIndex ? (
-                  <span className="block w-6 h-6 md:w-8 md:h-8 rounded-full border-2 border-[#680018] flex items-center justify-center">
-                    <span className="block w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#680018]"></span>
+                  <span className="block w-6 h-6 md:w-8 md:h-8 rounded-full border-2 border-[#1A1A1A] flex items-center justify-center">
+                    <span className="block w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#1A1A1A]"></span>
                   </span>
                 ) : (
-                  <span className="block w-4 h-4 md:w-6 md:h-6 rounded-full bg-[#680018]/40 hover:bg-[#680018]"></span>
+                  <span className="block w-4 h-4 md:w-6 md:h-6 rounded-full bg-[#1A1A1A]/40 hover:bg-[#1A1A1A]"></span>
                 )}
               </button>
             ))}
           </div>
           <button
             onClick={next}
-            className="text-[#680018] hover:text-[#2D020C] transition-colors p-1"
+            className="text-[#1A1A1A] hover:text-[#333333] transition-colors p-1"
             aria-label="Вперёд"
           >
             <ArrowRight className="w-6 h-6 md:w-10 md:h-10" strokeWidth={1.5} />
@@ -556,16 +560,16 @@ function HomePage({
       <section className="py-10 md:py-20 px-4 md:px-12 max-w-[1400px] mx-auto">
         <div className="flex justify-between items-end mb-6 md:mb-10">
           <div>
-            <h2 className="text-xl md:text-4xl font-medium text-[#1A1314] mb-1 md:mb-2">
+            <h2 className="text-xl md:text-4xl font-medium text-[#1A1A1A] mb-1 md:mb-2">
               Рекомендуемые продукты
             </h2>
-            <p className="text-[#706567] text-[11px] md:text-sm">
+            <p className="text-[#666666] text-[11px] md:text-sm">
               Подборка новых товаров для каждого сезона
             </p>
           </div>
           <button
             onClick={() => onNavigate('catalog')}
-            className="text-[11px] md:text-sm font-medium flex items-center gap-1 text-[#680018] hover:text-[#2D020C] transition-colors"
+            className="text-[11px] md:text-sm font-medium flex items-center gap-1 text-[#1A1A1A] hover:text-[#333333] transition-colors"
           >
             Все <ArrowRight className="w-3 h-3 md:w-4 md:h-4" />
           </button>
@@ -578,7 +582,7 @@ function HomePage({
             ))}
           </div>
         ) : (
-          <p className="text-[#706567] text-sm">Рекомендуемые товары скоро появятся</p>
+          <p className="text-[#666666] text-sm">Рекомендуемые товары скоро появятся</p>
         )}
       </section>
 
@@ -587,16 +591,16 @@ function HomePage({
         <section className="py-10 md:py-20 px-4 md:px-12 max-w-[1400px] mx-auto">
           <div className="flex justify-between items-end mb-6 md:mb-10">
             <div>
-              <h2 className="text-xl md:text-4xl font-medium text-[#1A1314] mb-1 md:mb-2">
+              <h2 className="text-xl md:text-4xl font-medium text-[#1A1A1A] mb-1 md:mb-2">
                 Новинки
               </h2>
-              <p className="text-[#706567] text-[11px] md:text-sm">
+              <p className="text-[#666666] text-[11px] md:text-sm">
                 Свежие поступления этого сезона
               </p>
             </div>
             <button
               onClick={() => onCollectionNavigate('Новинки')}
-              className="text-[11px] md:text-sm font-medium flex items-center gap-1 text-[#680018] hover:text-[#2D020C] transition-colors"
+              className="text-[11px] md:text-sm font-medium flex items-center gap-1 text-[#1A1A1A] hover:text-[#333333] transition-colors"
             >
               Все <ArrowRight className="w-3 h-3 md:w-4 md:h-4" />
             </button>
@@ -652,7 +656,7 @@ function CatalogPage({
     return (
       <div className="max-w-[1400px] mx-auto px-4 md:px-12 py-8 md:py-10">
         <div className="flex items-center justify-center py-20">
-          <div className="w-8 h-8 border-4 border-[#680018] border-t-transparent rounded-full animate-spin" />
+          <div className="w-8 h-8 border-4 border-[#1A1A1A] border-t-transparent rounded-full animate-spin" />
         </div>
       </div>
     );
@@ -691,18 +695,18 @@ function CatalogPage({
   const filterContent = (
     <>
       <div className="mb-6 md:mb-8">
-        <h3 className="text-xs md:text-sm font-medium mb-3 md:mb-4 text-[#1A1314]">Коллекции</h3>
+        <h3 className="text-xs md:text-sm font-medium mb-3 md:mb-4 text-[#1A1A1A]">Коллекции</h3>
         <ul className="space-y-2.5 md:space-y-3">
           {collections.map((col) => (
             <li key={col} className="flex items-center justify-between">
-              <label className="text-xs md:text-sm text-[#1A1314]/80 cursor-pointer">
+              <label className="text-xs md:text-sm text-[#1A1A1A]/80 cursor-pointer">
                 {col}
               </label>
               <input
                 type="checkbox"
                 checked={selectedCollections.includes(col)}
                 onChange={() => toggleCollection(col)}
-                className="w-3.5 h-3.5 md:w-4 md:h-4 rounded border-gray-300 cursor-pointer accent-[#680018]"
+                className="w-3.5 h-3.5 md:w-4 md:h-4 rounded border-gray-300 cursor-pointer accent-[#1A1A1A]"
               />
             </li>
           ))}
@@ -711,13 +715,13 @@ function CatalogPage({
 
       {/* Price Filter */}
       <div>
-        <h3 className="text-xs md:text-sm font-medium mb-3 md:mb-4 text-[#1A1314]">Цена</h3>
+        <h3 className="text-xs md:text-sm font-medium mb-3 md:mb-4 text-[#1A1A1A]">Цена</h3>
         <div className="w-full relative h-1.5 bg-gray-200 rounded mb-3 md:mb-4">
             {/* Active track between the two thumbs */}
             <div
               className="absolute h-1.5 rounded"
               style={{
-                backgroundColor: '#680018',
+                backgroundColor: '#1A1A1A',
                 left: `${((priceMin - PRICE_MIN) / (PRICE_MAX - PRICE_MIN)) * 100}%`,
                 right: `${100 - ((priceMax - PRICE_MIN) / (PRICE_MAX - PRICE_MIN)) * 100}%`,
               }}
@@ -733,7 +737,7 @@ function CatalogPage({
                 const val = Number(e.target.value);
                 setPriceMin(Math.min(val, priceMax - 1));
               }}
-              className="absolute w-full h-1.5 appearance-none bg-transparent pointer-events-none z-20 [&::-webkit-slider-thumb]:pointer-events-auto [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-[#680018] [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-white [&::-webkit-slider-thumb]:shadow-md [&::-webkit-slider-thumb]:cursor-pointer [&::-moz-range-thumb]:pointer-events-auto [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-[#680018] [&::-moz-range-thumb]:border-2 [&::-moz-range-thumb]:border-white [&::-moz-range-thumb]:shadow-md [&::-moz-range-thumb]:cursor-pointer"
+              className="absolute w-full h-1.5 appearance-none bg-transparent pointer-events-none z-20 [&::-webkit-slider-thumb]:pointer-events-auto [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-[#1A1A1A] [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-white [&::-webkit-slider-thumb]:shadow-md [&::-webkit-slider-thumb]:cursor-pointer [&::-moz-range-thumb]:pointer-events-auto [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-[#1A1A1A] [&::-moz-range-thumb]:border-2 [&::-moz-range-thumb]:border-white [&::-moz-range-thumb]:shadow-md [&::-moz-range-thumb]:cursor-pointer"
               style={{ top: '50%', transform: 'translateY(-50%)' }}
             />
             {/* Max thumb */}
@@ -747,11 +751,11 @@ function CatalogPage({
                 const val = Number(e.target.value);
                 setPriceMax(Math.max(val, priceMin + 1));
               }}
-              className="absolute w-full h-1.5 appearance-none bg-transparent pointer-events-none z-20 [&::-webkit-slider-thumb]:pointer-events-auto [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-[#680018] [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-white [&::-webkit-slider-thumb]:shadow-md [&::-webkit-slider-thumb]:cursor-pointer [&::-moz-range-thumb]:pointer-events-auto [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-[#680018] [&::-moz-range-thumb]:border-2 [&::-moz-range-thumb]:border-white [&::-moz-range-thumb]:shadow-md [&::-moz-range-thumb]:cursor-pointer"
+              className="absolute w-full h-1.5 appearance-none bg-transparent pointer-events-none z-20 [&::-webkit-slider-thumb]:pointer-events-auto [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-[#1A1A1A] [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-white [&::-webkit-slider-thumb]:shadow-md [&::-webkit-slider-thumb]:cursor-pointer [&::-moz-range-thumb]:pointer-events-auto [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-[#1A1A1A] [&::-moz-range-thumb]:border-2 [&::-moz-range-thumb]:border-white [&::-moz-range-thumb]:shadow-md [&::-moz-range-thumb]:cursor-pointer"
               style={{ top: '50%', transform: 'translateY(-50%)' }}
             />
           </div>
-          <div className="flex justify-between text-[10px] md:text-xs text-[#706567]">
+          <div className="flex justify-between text-[10px] md:text-xs text-[#666666]">
             <span>{formatPrice(priceMin)}</span>
             <span>{formatPrice(priceMax)}</span>
           </div>
@@ -764,8 +768,8 @@ function CatalogPage({
       {onGoBack && <BackButton onBack={onGoBack} />}
       {/* Header */}
       <div className="mb-6 md:mb-8">
-        <h1 className="text-3xl md:text-4xl font-medium text-[#1A1314] mb-2">Каталог товаров</h1>
-        <p className="text-[#706567] text-xs md:text-sm">Подборка необходимых вещей для каждого гардероба</p>
+        <h1 className="text-3xl md:text-4xl font-medium text-[#1A1A1A] mb-2">Каталог товаров</h1>
+        <p className="text-[#666666] text-xs md:text-sm">Подборка необходимых вещей для каждого гардероба</p>
       </div>
 
       <div className="flex gap-6 md:gap-10 flex-col md:flex-row">
@@ -774,9 +778,9 @@ function CatalogPage({
           <aside className="w-full md:w-56 lg:w-64 flex-shrink-0">
             <button
               onClick={() => setFiltersOpen(!filtersOpen)}
-              className="flex items-center justify-between w-full mb-5 md:mb-6 text-[#1A1314] bg-white rounded-md px-3 py-2.5 md:py-3 border border-gray-200 hover:border-[#680018] transition-colors cursor-pointer"
+              className="flex items-center justify-between w-full mb-5 md:mb-6 text-[#1A1A1A] bg-white rounded-md px-3 py-2.5 md:py-3 border border-gray-200 hover:border-[#1A1A1A] transition-colors cursor-pointer"
             >
-              <span className="text-xs md:text-sm text-[#1A1314]">Фильтры</span>
+              <span className="text-xs md:text-sm text-[#1A1A1A]">Фильтры</span>
               <ChevronUp className="w-3.5 h-3.5 md:w-4 md:h-4 text-gray-500" />
             </button>
             {filterContent}
@@ -793,7 +797,7 @@ function CatalogPage({
                 placeholder="Поиск продуктов"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-white text-[#1A1314] text-xs md:text-sm rounded-md pl-9 md:pl-10 pr-4 py-2.5 md:py-3 outline-none border border-gray-200 focus:ring-1 focus:ring-[#680018] focus:border-[#680018]"
+                className="w-full bg-white text-[#1A1A1A] text-xs md:text-sm rounded-md pl-9 md:pl-10 pr-4 py-2.5 md:py-3 outline-none border border-gray-200 focus:ring-1 focus:ring-[#1A1A1A] focus:border-[#1A1A1A]"
               />
               <Search className="absolute left-3 md:left-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-gray-400" />
             </div>
@@ -804,8 +808,8 @@ function CatalogPage({
                 onClick={() => setFiltersOpen(!filtersOpen)}
                 className={`border bg-white rounded-md p-2.5 md:p-3 flex items-center gap-2 cursor-pointer transition-colors ${
                   filtersOpen
-                    ? 'border-[#680018] text-[#680018]'
-                    : 'border-gray-200 text-[#1A1314] hover:border-[#680018]'
+                    ? 'border-[#1A1A1A] text-[#1A1A1A]'
+                    : 'border-gray-200 text-[#1A1A1A] hover:border-[#1A1A1A]'
                 }`}
               >
                 <span className="text-xs md:text-sm">Фильтры</span>
@@ -822,23 +826,23 @@ function CatalogPage({
                   onClick={() => setSortOpen(!sortOpen)}
                   className="w-full sm:w-44 md:w-52 border border-gray-200 bg-white rounded-md p-2.5 md:p-3 flex justify-between items-center cursor-pointer"
                 >
-                  <span className="text-xs md:text-sm text-[#1A1314]">
+                  <span className="text-xs md:text-sm text-[#1A1A1A]">
                     {sortOptions.find((o) => o.value === sortBy)?.label || 'Сортировка'}
                   </span>
                   <ChevronDown className="w-3.5 h-3.5 md:w-4 md:h-4 text-gray-500" />
                 </button>
                 {sortOpen && (
                   <div className="absolute top-full left-0 w-full bg-white border border-gray-200 rounded-md mt-1 shadow-lg z-10">
-                    <ul className="py-2 text-xs md:text-sm text-[#1A1314]">
+                    <ul className="py-2 text-xs md:text-sm text-[#1A1A1A]">
                       {sortOptions.map((opt) => (
                         <li key={opt.value}>
                           <button
                             onClick={() => { setSortBy(opt.value); setSortOpen(false); }}
-                            className="w-full px-3 md:px-4 py-2 hover:bg-[#F9F7F5] flex justify-between items-center text-left"
+                            className="w-full px-3 md:px-4 py-2 hover:bg-[#F5F5F5] flex justify-between items-center text-left"
                           >
                             {opt.label}
                             {sortBy === opt.value && (
-                              <span className="w-2.5 h-2.5 rounded-full bg-[#680018]" />
+                              <span className="w-2.5 h-2.5 rounded-full bg-[#1A1A1A]" />
                             )}
                           </button>
                         </li>
@@ -858,7 +862,7 @@ function CatalogPage({
           </div>
 
           {filteredProducts.length === 0 && (
-            <div className="text-center py-16 text-[#706567]">
+            <div className="text-center py-16 text-[#666666]">
               <p className="text-lg">Товары не найдены</p>
               <p className="text-sm mt-2">Попробуйте изменить фильтры</p>
             </div>
@@ -929,8 +933,8 @@ function ProductPage({
                 className={
                   'w-12 h-12 rounded-full overflow-hidden transition-all ' +
                   (activeImg === i
-                    ? 'ring-2 ring-[#680018]'
-                    : 'ring-1 ring-transparent hover:ring-[#680018]/40')
+                    ? 'ring-2 ring-[#1A1A1A]'
+                    : 'ring-1 ring-transparent hover:ring-[#1A1A1A]/40')
                 }
                 style={{ backgroundColor: '#FFFFFF' }}
               >
@@ -955,8 +959,8 @@ function ProductPage({
                 className={
                   'aspect-[3/4] overflow-hidden transition-all rounded-sm ' +
                   (activeImg === i
-                    ? 'ring-2 ring-[#680018]'
-                    : 'ring-1 ring-transparent hover:ring-[#680018]/40')
+                    ? 'ring-2 ring-[#1A1A1A]'
+                    : 'ring-1 ring-transparent hover:ring-[#1A1A1A]/40')
                 }
                 style={{ backgroundColor: '#FFFFFF' }}
               >
@@ -970,25 +974,25 @@ function ProductPage({
           </div>
 
           {product.category && (
-          <p className="text-xs md:text-sm text-[#680018] mb-1.5 md:mb-2 tracking-wide">
+          <p className="text-xs md:text-sm text-[#1A1A1A] mb-1.5 md:mb-2 tracking-wide">
             {product.category}
           </p>
           )}
-          <h1 className="text-2xl md:text-4xl font-medium text-[#1A1314] mb-3 md:mb-4">
+          <h1 className="text-2xl md:text-4xl font-medium text-[#1A1A1A] mb-3 md:mb-4">
             {product.name}
           </h1>
-          <p className="text-xl md:text-2xl font-light text-[#1A1314] mb-4 md:mb-6">
+          <p className="text-xl md:text-2xl font-light text-[#1A1A1A] mb-4 md:mb-6">
             {formatPrice(product.price)}
           </p>
 
           {product.description && (
-            <p className="text-sm md:text-[15px] text-[#1A1314]/70 mb-6 md:mb-8 leading-relaxed">
+            <p className="text-sm md:text-[15px] text-[#1A1A1A]/70 mb-6 md:mb-8 leading-relaxed">
               {product.description}
             </p>
           )}
 
           <div className="mb-6 md:mb-8">
-            <p className="text-xs md:text-sm text-[#706567] mb-2.5 md:mb-3 block">Количество</p>
+            <p className="text-xs md:text-sm text-[#666666] mb-2.5 md:mb-3 block">Количество</p>
             <div className="flex items-center">
               <button
                 onClick={() => setQuantity(Math.max(1, quantity - 1))}
@@ -1015,8 +1019,8 @@ function ProductPage({
 
           <button
             onClick={handleAddToCart}
-            className="w-full text-white py-3 md:py-4 font-medium transition-colors tracking-wide rounded-sm hover:bg-[#680018]"
-            style={{ backgroundColor: '#2D020C' }}
+            className="w-full text-white py-3 md:py-4 font-medium transition-colors tracking-wide rounded-sm hover:bg-[#1A1A1A]"
+            style={{ backgroundColor: '#1A1A1A' }}
           >
             Добавить в корзину
           </button>
@@ -1027,16 +1031,16 @@ function ProductPage({
       <div className="mt-12 md:mt-24">
         <div className="flex justify-between items-end mb-6 md:mb-8">
           <div>
-            <h2 className="text-2xl md:text-3xl font-medium text-[#1A1314]">
+            <h2 className="text-2xl md:text-3xl font-medium text-[#1A1A1A]">
               Рекомендуемые продукты
             </h2>
-            <p className="text-[#706567] text-xs md:text-sm mt-1">
+            <p className="text-[#666666] text-xs md:text-sm mt-1">
               Подборка новых товаров для каждого сезона
             </p>
           </div>
           <button
             onClick={() => onNavigate('catalog')}
-            className="text-[#680018] text-xs md:text-sm font-medium flex items-center gap-1 hover:underline"
+            className="text-[#1A1A1A] text-xs md:text-sm font-medium flex items-center gap-1 hover:underline"
           >
             Все →
           </button>
@@ -1147,10 +1151,10 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
     <div className="max-w-[1400px] mx-auto px-4 md:px-12 py-8 md:py-12">
       {onGoBack && <BackButton onBack={onGoBack} />}
       <div className="mb-8 md:mb-12">
-        <h1 className="text-3xl md:text-4xl font-medium text-[#1A1314] mb-2">
+        <h1 className="text-3xl md:text-4xl font-medium text-[#1A1A1A] mb-2">
           Корзина оформление заказа
         </h1>
-        <p className="text-[#680018] text-xs md:text-sm">Оформление заказа</p>
+        <p className="text-[#1A1A1A] text-xs md:text-sm">Оформление заказа</p>
       </div>
 
       <div className="flex flex-col gap-6 md:gap-8">
@@ -1161,16 +1165,16 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
             className="w-full flex items-center justify-between px-4 md:px-6 py-4 md:py-5 hover:bg-gray-50 transition-colors"
           >
             <div className="flex items-center gap-3">
-              <ShoppingBag className="w-5 h-5 md:w-6 md:h-6 text-[#680018]" />
+              <ShoppingBag className="w-5 h-5 md:w-6 md:h-6 text-[#1A1A1A]" />
               <div className="text-left">
-                <h2 className="text-lg md:text-xl font-medium text-[#1A1314]">Корзина</h2>
+                <h2 className="text-lg md:text-xl font-medium text-[#1A1A1A]">Корзина</h2>
                 {items.length > 0 && (
-                  <p className="text-[#706567] text-[11px] md:text-xs">{items.length} товар(ов) · {formatPrice(total)}</p>
+                  <p className="text-[#666666] text-[11px] md:text-xs">{items.length} товар(ов) · {formatPrice(total)}</p>
                 )}
               </div>
             </div>
             <ChevronDown
-              className={`w-5 h-5 md:w-6 md:h-6 text-[#706567] transition-transform duration-300 ${cartExpanded ? 'rotate-180' : ''}`}
+              className={`w-5 h-5 md:w-6 md:h-6 text-[#666666] transition-transform duration-300 ${cartExpanded ? 'rotate-180' : ''}`}
             />
           </button>
 
@@ -1182,7 +1186,7 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                 {/* Cart Items Table */}
                 <div className="flex-1">
                   {/* Table header */}
-                  <div className="hidden md:grid grid-cols-8 text-xs md:text-sm font-medium text-[#1A1314] border-b border-gray-200 pb-3 md:pb-4 mb-3 md:mb-4">
+                  <div className="hidden md:grid grid-cols-8 text-xs md:text-sm font-medium text-[#1A1A1A] border-b border-gray-200 pb-3 md:pb-4 mb-3 md:mb-4">
                     <div className="col-span-1">Фото</div>
                     <div className="col-span-3">Наименование продукта</div>
                     <div className="col-span-2 text-center">Количество</div>
@@ -1193,7 +1197,7 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                     {items.map((item) => (
                     <div
                       key={item.product.id}
-                      className="grid grid-cols-8 items-center text-xs md:text-sm gap-2 cursor-pointer hover:bg-[#F9F7F5] rounded-sm transition-colors -mx-1 px-1"
+                      className="grid grid-cols-8 items-center text-xs md:text-sm gap-2 cursor-pointer hover:bg-[#F5F5F5] rounded-sm transition-colors -mx-1 px-1"
                       onClick={() => onSelectProduct(item.product)}
                     >
                       {/* Photo */}
@@ -1209,7 +1213,7 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                       </div>
                       {/* Name */}
                       <div className="col-span-3">
-                        <p className="text-sm md:text-base font-medium text-[#1A1314] line-clamp-2 hover:text-[#680018] transition-colors">{item.product.name}</p>
+                        <p className="text-sm md:text-base font-medium text-[#1A1A1A] line-clamp-2 hover:text-[#1A1A1A] transition-colors">{item.product.name}</p>
                       </div>
                       {/* Quantity */}
                       <div className="col-span-2 flex justify-center items-center" onClick={(e) => e.stopPropagation()}>
@@ -1238,7 +1242,7 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                       </div>
                       {/* Total */}
                       <div className="col-span-2 flex justify-center items-center">
-                        <span className="text-sm md:text-lg font-medium text-[#1A1314]">
+                        <span className="text-sm md:text-lg font-medium text-[#1A1A1A]">
                           {formatPrice(item.product.price * item.quantity)}
                         </span>
                       </div>
@@ -1246,10 +1250,10 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                     ))}
                     {items.length === 0 && (
                       <div className="text-center py-10 md:py-12">
-                        <p className="text-[#706567] text-base md:text-lg mb-4">Корзина пуста</p>
+                        <p className="text-[#666666] text-base md:text-lg mb-4">Корзина пуста</p>
                         <button
                           onClick={() => onNavigate('catalog')}
-                          className="text-[#680018] text-sm font-medium hover:underline"
+                          className="text-[#1A1A1A] text-sm font-medium hover:underline"
                         >
                           Перейти в каталог →
                         </button>
@@ -1263,13 +1267,13 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                 <div className="w-full lg:w-[380px] md:w-[400px]">
                   <div
                     className="p-5 md:p-8 rounded-md border border-gray-200 shadow-sm"
-                    style={{ backgroundColor: '#F9F7F5' }}
+                    style={{ backgroundColor: '#F5F5F5' }}
                   >
                     <div className="flex justify-between items-center mb-5 md:mb-6">
-                      <h2 className="text-lg md:text-xl font-medium text-[#1A1314]">
+                      <h2 className="text-lg md:text-xl font-medium text-[#1A1A1A]">
                         Оформление заказа
                       </h2>
-                      <Wallet className="w-4 h-4 md:w-5 md:h-5 text-[#706567]" />
+                      <Wallet className="w-4 h-4 md:w-5 md:h-5 text-[#666666]" />
                     </div>
 
                     <div className="space-y-3 md:space-y-4 mb-6 md:mb-8">
@@ -1279,10 +1283,10 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                           placeholder="Имя"
                           value={customerName}
                           onChange={(e) => setCustomerName(e.target.value)}
-                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-md text-xs md:text-sm outline-none focus:ring-1 focus:ring-[#680018]"
-                          style={{ backgroundColor: '#EFE6E1' }}
+                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-md text-xs md:text-sm outline-none focus:ring-1 focus:ring-[#1A1A1A]"
+                          style={{ backgroundColor: '#F5F5F5' }}
                         />
-                        <User className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-[#680018]" />
+                        <User className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-[#1A1A1A]" />
                       </div>
                       <div className="relative">
                         <input
@@ -1290,10 +1294,10 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                           placeholder="Телефон"
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
-                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-md text-xs md:text-sm outline-none focus:ring-1 focus:ring-[#680018]"
-                          style={{ backgroundColor: '#EFE6E1' }}
+                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-md text-xs md:text-sm outline-none focus:ring-1 focus:ring-[#1A1A1A]"
+                          style={{ backgroundColor: '#F5F5F5' }}
                         />
-                        <Phone className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-[#680018]" />
+                        <Phone className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-[#1A1A1A]" />
                       </div>
                       <div className="relative">
                         <input
@@ -1301,22 +1305,22 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                           placeholder="Адрес"
                           value={address}
                           onChange={(e) => setAddress(e.target.value)}
-                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-md text-xs md:text-sm outline-none focus:ring-1 focus:ring-[#680018]"
-                          style={{ backgroundColor: '#EFE6E1' }}
+                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-md text-xs md:text-sm outline-none focus:ring-1 focus:ring-[#1A1A1A]"
+                          style={{ backgroundColor: '#F5F5F5' }}
                         />
-                        <MapPin className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-[#680018]" />
+                        <MapPin className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-[#1A1A1A]" />
                       </div>
                     </div>
 
                     <div className="mb-6 md:mb-8">
-                      <h3 className="text-xs md:text-sm text-[#706567] mb-2.5 md:mb-3">Методы оплаты</h3>
+                      <h3 className="text-xs md:text-sm text-[#666666] mb-2.5 md:mb-3">Методы оплаты</h3>
                       <div className="grid grid-cols-3 gap-2.5 md:gap-3">
                         {/* Payme */}
                         <button
                           onClick={() => setPaymentMethod('payme')}
                           className={
                             'border-2 bg-white rounded-md py-3 md:py-4 flex items-center justify-center font-bold relative text-sm md:text-lg transition-all duration-300 ' +
-                            (paymentMethod === 'payme' ? 'border-[#680018]' : 'border-gray-200 hover:border-[#680018]')
+                            (paymentMethod === 'payme' ? 'border-[#1A1A1A]' : 'border-gray-200 hover:border-[#1A1A1A]')
                           }
                           style={{ color: '#38B2AC' }}
                         >
@@ -1324,7 +1328,7 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                           {paymentMethod === 'payme' && (
                             <div
                               className="absolute top-1 right-1 w-3.5 h-3.5 rounded-full flex items-center justify-center"
-                              style={{ backgroundColor: '#680018' }}
+                              style={{ backgroundColor: '#1A1A1A' }}
                             >
                               <svg viewBox="0 0 10 10" className="w-2.5 h-2.5 fill-white">
                                 <path d="M3.5 7.5L1.5 5.5L2.2 4.8L3.5 6.1L7.8 1.8L8.5 2.5L3.5 7.5Z" />
@@ -1337,7 +1341,7 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                           onClick={() => setPaymentMethod('uzum')}
                           className={
                             'border-2 bg-white rounded-md py-3 md:py-4 flex items-center justify-center font-bold relative text-sm md:text-lg transition-all duration-300 ' +
-                            (paymentMethod === 'uzum' ? 'border-[#680018]' : 'border-gray-200 hover:border-[#680018]')
+                            (paymentMethod === 'uzum' ? 'border-[#1A1A1A]' : 'border-gray-200 hover:border-[#1A1A1A]')
                           }
                           style={{ color: '#7B2FF2' }}
                         >
@@ -1345,7 +1349,7 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                           {paymentMethod === 'uzum' && (
                             <div
                               className="absolute top-1 right-1 w-3.5 h-3.5 rounded-full flex items-center justify-center"
-                              style={{ backgroundColor: '#680018' }}
+                              style={{ backgroundColor: '#1A1A1A' }}
                             >
                               <svg viewBox="0 0 10 10" className="w-2.5 h-2.5 fill-white">
                                 <path d="M3.5 7.5L1.5 5.5L2.2 4.8L3.5 6.1L7.8 1.8L8.5 2.5L3.5 7.5Z" />
@@ -1358,7 +1362,7 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                           onClick={() => setPaymentMethod('click')}
                           className={
                             'border-2 bg-white rounded-md py-3 md:py-4 flex items-center justify-center font-bold relative text-sm md:text-lg transition-all duration-300 ' +
-                            (paymentMethod === 'click' ? 'border-[#680018]' : 'border-gray-200 hover:border-[#680018]')
+                            (paymentMethod === 'click' ? 'border-[#1A1A1A]' : 'border-gray-200 hover:border-[#1A1A1A]')
                           }
                           style={{ color: '#3182CE' }}
                         >
@@ -1366,7 +1370,7 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                           {paymentMethod === 'click' && (
                             <div
                               className="absolute top-1 right-1 w-3.5 h-3.5 rounded-full flex items-center justify-center"
-                              style={{ backgroundColor: '#680018' }}
+                              style={{ backgroundColor: '#1A1A1A' }}
                             >
                               <svg viewBox="0 0 10 10" className="w-2.5 h-2.5 fill-white">
                                 <path d="M3.5 7.5L1.5 5.5L2.2 4.8L3.5 6.1L7.8 1.8L8.5 2.5L3.5 7.5Z" />
@@ -1379,8 +1383,8 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
 
                     {/* Total */}
                     <div className="flex justify-between items-center mb-4 md:mb-6 pb-3 md:pb-4 border-b border-gray-200">
-                      <span className="text-sm text-[#706567]">Итого:</span>
-                      <span className="text-lg md:text-xl font-medium text-[#1A1314]">
+                      <span className="text-sm text-[#666666]">Итого:</span>
+                      <span className="text-lg md:text-xl font-medium text-[#1A1A1A]">
                         {formatPrice(total)}
                       </span>
                     </div>
@@ -1388,7 +1392,7 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                     {/* Operator bilan bog'lanish */}
                     <button
                       onClick={() => window.open('tel:+998901234567')}
-                      className="w-full flex items-center justify-center gap-2 py-3 md:py-4 font-medium rounded-md transition-all duration-300 tracking-wide border-2 border-[#680018] text-[#680018] hover:bg-[#680018] hover:text-white mb-3"
+                      className="w-full flex items-center justify-center gap-2 py-3 md:py-4 font-medium rounded-md transition-all duration-300 tracking-wide border-2 border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white mb-3"
                     >
                       <Phone className="w-4 h-4 md:w-5 md:h-5" />
                       Связаться с оператором
@@ -1397,8 +1401,8 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                     <button
                       onClick={handleOrder}
                       disabled={orderLoading || items.length === 0}
-                      className="w-full text-white py-3 md:py-4 font-medium rounded-md transition-colors tracking-wide hover:bg-[#680018] disabled:opacity-50 disabled:cursor-not-allowed"
-                      style={{ backgroundColor: '#2D020C' }}
+                      className="w-full text-white py-3 md:py-4 font-medium rounded-md transition-colors tracking-wide hover:bg-[#1A1A1A] disabled:opacity-50 disabled:cursor-not-allowed"
+                      style={{ backgroundColor: '#1A1A1A' }}
                     >
                       {orderLoading ? 'Оформление...' : 'Оформить заказ'}
                     </button>
@@ -1417,19 +1421,19 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
             className="w-full flex items-center justify-between px-4 md:px-6 py-4 md:py-5 hover:bg-gray-50 transition-colors"
           >
             <div className="flex items-center gap-3">
-              <Wallet className="w-5 h-5 md:w-6 md:h-6 text-[#680018]" />
+              <Wallet className="w-5 h-5 md:w-6 md:h-6 text-[#1A1A1A]" />
               <div className="text-left">
-                <h2 className="text-lg md:text-xl font-medium text-[#1A1314]">Оформленные заказы</h2>
+                <h2 className="text-lg md:text-xl font-medium text-[#1A1A1A]">Оформленные заказы</h2>
                 {completedOrders.length > 0 && (
-                  <p className="text-[#706567] text-[11px] md:text-xs">{completedOrders.length} заказ(ов)</p>
+                  <p className="text-[#666666] text-[11px] md:text-xs">{completedOrders.length} заказ(ов)</p>
                 )}
                 {completedOrders.length === 0 && (
-                  <p className="text-[#706567] text-[11px] md:text-xs">Нет оформленных заказов</p>
+                  <p className="text-[#666666] text-[11px] md:text-xs">Нет оформленных заказов</p>
                 )}
               </div>
             </div>
             <ChevronDown
-              className={`w-5 h-5 md:w-6 md:h-6 text-[#706567] transition-transform duration-300 ${completedExpanded ? 'rotate-180' : ''}`}
+              className={`w-5 h-5 md:w-6 md:h-6 text-[#666666] transition-transform duration-300 ${completedExpanded ? 'rotate-180' : ''}`}
             />
           </button>
 
@@ -1440,13 +1444,13 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
               {completedOrders.length > 0 ? (
               <div className="space-y-4">
                 {completedOrders.map((order) => (
-                  <div key={order.id} className="border border-gray-200 rounded-md p-3 md:p-4" style={{ backgroundColor: '#F9F7F5' }}>
+                  <div key={order.id} className="border border-gray-200 rounded-md p-3 md:p-4" style={{ backgroundColor: '#F5F5F5' }}>
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-3 pb-3 border-b border-gray-200">
                       <div>
-                        <span className="text-xs md:text-sm font-medium text-[#680018]">Заказ #{order.id.slice(0, 8)}</span>
-                        <span className="text-xs text-[#706567] ml-2">{new Date(order.createdAt).toLocaleDateString('ru-RU')}</span>
+                        <span className="text-xs md:text-sm font-medium text-[#1A1A1A]">Заказ #{order.id.slice(0, 8)}</span>
+                        <span className="text-xs text-[#666666] ml-2">{new Date(order.createdAt).toLocaleDateString('ru-RU')}</span>
                       </div>
-                      <span className="text-sm md:text-base font-medium text-[#1A1314]">{formatPrice(order.totalPrice)}</span>
+                      <span className="text-sm md:text-base font-medium text-[#1A1A1A]">{formatPrice(order.totalPrice)}</span>
                     </div>
                     <div className="space-y-2">
                       {order.items.map((item) => (
@@ -1461,10 +1465,10 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                             )}
                           </div>
                           <div className="col-span-5 md:col-span-6">
-                            <p className="text-xs md:text-sm font-medium text-[#1A1314] line-clamp-1 hover:text-[#680018] transition-colors">{item.product.name}</p>
+                            <p className="text-xs md:text-sm font-medium text-[#1A1A1A] line-clamp-1 hover:text-[#1A1A1A] transition-colors">{item.product.name}</p>
                           </div>
-                          <div className="col-span-2 text-center text-[#706567]">{item.quantity} шт</div>
-                          <div className="col-span-3 text-right text-xs md:text-sm font-medium text-[#1A1314]">{formatPrice(item.product.price * item.quantity)}</div>
+                          <div className="col-span-2 text-center text-[#666666]">{item.quantity} шт</div>
+                          <div className="col-span-3 text-right text-xs md:text-sm font-medium text-[#1A1A1A]">{formatPrice(item.product.price * item.quantity)}</div>
                         </div>
                       ))}
                     </div>
@@ -1473,7 +1477,7 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
               </div>
               ) : (
                 <div className="text-center py-8 md:py-10">
-                  <p className="text-[#706567] text-sm">Оформленных заказов пока нет</p>
+                  <p className="text-[#666666] text-sm">Оформленных заказов пока нет</p>
                 </div>
               )}
             </div>
@@ -1595,7 +1599,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#F9F7F5' }}>
+    <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#F5F5F5' }}>
       <Header onNavigate={navigate} currentPage={currentPage} onSearch={navigateToSearch} onCollectionNavigate={navigateToCollection} onContactClick={() => setContactOpen(true)} collections={collections} />
       <main className="flex-1">
         <div

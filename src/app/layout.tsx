@@ -9,11 +9,11 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "SARPO — Baxt ulashamiz!",
-  description: "SARPO — Toshkent bo'ylab keng tarmoqli filiallarimizda sizni eng baxtli lahzalaringiz uchun hamroh bo'ladigan liboslar kutmoqda.",
-  keywords: ["SARPO", "fashion", "Uzbekistan", "traditional clothing", "modern style"],
+  title: "SILUET BASIC — Handmade for you!",
+  description: "SILUET BASIC — Toshkent bo'ylab keng tarmoqli filiallarimizda sizni eng baxtli lahzalaringiz uchun hamroh bo'ladigan liboslar kutmoqda.",
+  keywords: ["SILUET BASIC", "fashion", "Uzbekistan", "traditional clothing", "modern style"],
   icons: {
-    icon: "/images/sarpo_logo.svg",
+    icon: "/images/siluette_logo.png",
   },
 };
 

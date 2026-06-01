@@ -79,7 +79,7 @@ export const useCartStore = create<CartState>()(
         get().items.reduce((sum, item) => sum + item.product.price * item.quantity, 0),
     }),
     {
-      name: 'sarpo-cart',
+      name: 'siluet-basic-cart',
     }
   )
 );

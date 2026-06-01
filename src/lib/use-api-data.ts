@@ -31,12 +31,12 @@ async function safeFetchJson(url: string, label: string, extraHeaders?: Record<s
       headers: { ...AUTH_HEADERS, ...extraHeaders },
     });
     if (!res.ok) {
-      console.warn(`[SARPO API] GET ${label} → ${res.status}`);
+      console.warn(`[SILUET BASIC API] GET ${label} → ${res.status}`);
       return null;
     }
     return await res.json();
   } catch (err) {
-    console.warn(`[SARPO API] GET ${label} failed:`, err);
+    console.warn(`[SILUET BASIC API] GET ${label} failed:`, err);
     return null;
   }
 }
@@ -86,7 +86,7 @@ async function fetchProductsWithFallback(subEndpoint: string, fallbackExtra?: Re
   }
 
   // 2. Sub-endpoint returned empty — fall back to /products
-  console.log(`[SARPO API] ${subEndpoint} returned empty, falling back to /products`);
+  console.log(`[SILUET BASIC API] ${subEndpoint} returned empty, falling back to /products`);
   const products = await fetchProductsFromMain(fallbackExtra);
   if (products.length > 0) return products;
 

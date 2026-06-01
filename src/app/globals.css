@@ -42,50 +42,50 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  /* SARPO brand colors */
-  --color-sarpo-wine: #2D020C;
-  --color-sarpo-ruby: #680018;
-  --color-sarpo-ink: #1A1314;
-  --color-sarpo-beige: #EFE6E1;
-  --color-sarpo-cream: #F9F7F5;
-  --color-sarpo-champagne: #FBF1DC;
-  --color-sarpo-mute: #706567;
+  /* SILUET BASIC brand colors */
+  --color-siluet-dark: #1A1A1A;
+  --color-siluet-charcoal: #1A1A1A;
+  --color-siluet-ink: #1A1A1A;
+  --color-siluet-light: #F5F5F5;
+  --color-siluet-cream: #F5F5F5;
+  --color-siluet-champagne: #FBF1DC;
+  --color-siluet-mute: #666666;
 }
 
 :root {
   --radius: 0.625rem;
-  /* SARPO brand - cream/warm white background, NOT black */
-  --background: #F9F7F5;
-  --foreground: #1A1314;
+  /* SILUET BASIC brand - light gray background, NOT black */
+  --background: #F5F5F5;
+  --foreground: #1A1A1A;
   --card: #FFFFFF;
-  --card-foreground: #1A1314;
+  --card-foreground: #1A1A1A;
   --popover: #FFFFFF;
-  --popover-foreground: #1A1314;
-  --primary: #2D020C;
+  --popover-foreground: #1A1A1A;
+  --primary: #1A1A1A;
   --primary-foreground: #FFFFFF;
-  --secondary: #EFE6E1;
-  --secondary-foreground: #1A1314;
-  --muted: #EFE6E1;
-  --muted-foreground: #706567;
-  --accent: #EFE6E1;
-  --accent-foreground: #1A1314;
+  --secondary: #F5F5F5;
+  --secondary-foreground: #1A1A1A;
+  --muted: #F5F5F5;
+  --muted-foreground: #666666;
+  --accent: #F5F5F5;
+  --accent-foreground: #1A1A1A;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: #E5DDD8;
-  --input: #E5DDD8;
-  --ring: #680018;
+  --border: #E0E0E0;
+  --input: #E0E0E0;
+  --ring: #1A1A1A;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: #EFE6E1;
-  --sidebar-foreground: #1A1314;
-  --sidebar-primary: #2D020C;
+  --sidebar: #F5F5F5;
+  --sidebar-foreground: #1A1A1A;
+  --sidebar-primary: #1A1A1A;
   --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #EFE6E1;
-  --sidebar-accent-foreground: #1A1314;
-  --sidebar-border: #E5DDD8;
-  --sidebar-ring: #680018;
+  --sidebar-accent: #F5F5F5;
+  --sidebar-accent-foreground: #1A1A1A;
+  --sidebar-border: #E0E0E0;
+  --sidebar-ring: #1A1A1A;
 }
 
 @layer base {
