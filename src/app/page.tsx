@@ -777,13 +777,6 @@ function CatalogPage({
         {/* Sidebar — only takes space when open */}
         {filtersOpen && (
           <aside className="w-full md:w-56 lg:w-64 flex-shrink-0">
-            <button
-              onClick={() => setFiltersOpen(!filtersOpen)}
-              className="flex items-center justify-between w-full mb-5 md:mb-6 text-[#1A1A1A] bg-white rounded-md px-3 py-2.5 md:py-3 border border-gray-200 hover:border-[#1A1A1A] transition-colors cursor-pointer"
-            >
-              <span className="text-xs md:text-sm text-[#1A1A1A]">Фильтры</span>
-              <ChevronUp className="w-3.5 h-3.5 md:w-4 md:h-4 text-gray-500" />
-            </button>
             {filterContent}
           </aside>
         )}
@@ -832,13 +825,14 @@ function CatalogPage({
               </button>
               {sortOpen && (
                 <div className="absolute top-full right-0 w-full bg-white border border-gray-200 rounded-md mt-1 z-10">
-                  <ul className="py-2 text-xs md:text-sm text-[#1A1A1A]">
+                  <ul className="py-3 px-3 md:px-4 text-xs md:text-sm text-[#1A1A1A]">
                     {sortOptions.map((opt) => (
                       <li key={opt.value}>
                         <button
                           onClick={() => { setSortBy(opt.value); setSortOpen(false); }}
-                          className="w-full px-3 md:px-4 py-2 hover:bg-[#F5F5F5] flex items-center gap-2.5 text-left"
+                          className="w-full py-2.5 hover:bg-[#F5F5F5] flex items-center justify-between text-left"
                         >
+                          <span className={sortBy === opt.value ? 'font-medium' : ''}>{opt.label}</span>
                           <span
                             className={`w-3.5 h-3.5 rounded-full border-2 flex items-center justify-center shrink-0 ${
                               sortBy === opt.value ? 'border-[#1A1A1A]' : 'border-[#999999]'
@@ -846,7 +840,6 @@ function CatalogPage({
                           >
                             {sortBy === opt.value && <span className="block w-1.5 h-1.5 rounded-full bg-[#1A1A1A]" />}
                           </span>
-                          <span className={sortBy === opt.value ? 'font-medium' : ''}>{opt.label}</span>
                         </button>
                       </li>
                     ))}
