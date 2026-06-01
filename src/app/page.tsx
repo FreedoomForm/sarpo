@@ -128,7 +128,7 @@ function Header({ onNavigate, currentPage, onSearch, onCollectionNavigate, onCon
               <img
                 src="/images/siluette_logo.png"
                 alt="SILUET BASIC"
-                className="h-10 md:h-14 w-auto select-none"
+                className="h-7 md:h-9 w-auto select-none"
                 draggable={false}
               />
 
@@ -1220,21 +1220,18 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                         <div className="flex items-center">
                           <button
                             onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
-                            className="w-7 h-7 md:w-9 md:h-9 border flex items-center justify-center hover:bg-[#F2E5D5] transition-colors text-xs md:text-sm"
-                            style={{ backgroundColor: '#FCF7F1', borderColor: '#EDDCCC' }}
+                            className="w-7 h-7 md:w-9 md:h-9 border border-gray-300 bg-white flex items-center justify-center hover:bg-gray-100 transition-colors text-xs md:text-sm"
                           >
                             −
                           </button>
                           <div
-                            className="w-8 h-7 md:w-12 md:h-9 border-t border-b bg-white flex items-center justify-center font-medium text-xs md:text-sm"
-                            style={{ borderColor: '#EDDCCC' }}
+                            className="w-8 h-7 md:w-12 md:h-9 border-t border-b border-gray-300 bg-white flex items-center justify-center font-medium text-xs md:text-sm"
                           >
                             {item.quantity}
                           </div>
                           <button
                             onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
-                            className="w-7 h-7 md:w-9 md:h-9 border flex items-center justify-center hover:bg-[#F2E5D5] transition-colors text-xs md:text-sm"
-                            style={{ backgroundColor: '#FCF7F1', borderColor: '#EDDCCC' }}
+                            className="w-7 h-7 md:w-9 md:h-9 border border-gray-300 bg-white flex items-center justify-center hover:bg-gray-100 transition-colors text-xs md:text-sm"
                           >
                             +
                           </button>
@@ -1266,8 +1263,7 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                 {items.length > 0 && (
                 <div className="w-full lg:w-[380px] md:w-[400px]">
                   <div
-                    className="p-5 md:p-8 rounded-md border border-gray-200 shadow-sm"
-                    style={{ backgroundColor: '#F5F5F5' }}
+                    className="p-5 md:p-8 rounded-md border border-gray-200 shadow-sm bg-white"
                   >
                     <div className="flex justify-between items-center mb-5 md:mb-6">
                       <h2 className="text-lg md:text-xl font-medium text-[#1A1A1A]">
@@ -1283,10 +1279,9 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                           placeholder="Имя"
                           value={customerName}
                           onChange={(e) => setCustomerName(e.target.value)}
-                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-md text-xs md:text-sm outline-none focus:ring-1 focus:ring-[#1A1A1A]"
-                          style={{ backgroundColor: '#F5F5F5' }}
+                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-md text-xs md:text-sm outline-none border border-gray-200 focus:ring-1 focus:ring-[#1A1A1A] focus:border-[#1A1A1A] bg-white"
                         />
-                        <User className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-[#1A1A1A]" />
+                        <User className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-gray-400" />
                       </div>
                       <div className="relative">
                         <input
@@ -1294,10 +1289,9 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                           placeholder="Телефон"
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
-                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-md text-xs md:text-sm outline-none focus:ring-1 focus:ring-[#1A1A1A]"
-                          style={{ backgroundColor: '#F5F5F5' }}
+                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-md text-xs md:text-sm outline-none border border-gray-200 focus:ring-1 focus:ring-[#1A1A1A] focus:border-[#1A1A1A] bg-white"
                         />
-                        <Phone className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-[#1A1A1A]" />
+                        <Phone className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-gray-400" />
                       </div>
                       <div className="relative">
                         <input
@@ -1305,55 +1299,27 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                           placeholder="Адрес"
                           value={address}
                           onChange={(e) => setAddress(e.target.value)}
-                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-md text-xs md:text-sm outline-none focus:ring-1 focus:ring-[#1A1A1A]"
-                          style={{ backgroundColor: '#F5F5F5' }}
+                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-md text-xs md:text-sm outline-none border border-gray-200 focus:ring-1 focus:ring-[#1A1A1A] focus:border-[#1A1A1A] bg-white"
                         />
-                        <MapPin className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-[#1A1A1A]" />
+                        <MapPin className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-gray-400" />
                       </div>
                     </div>
 
                     <div className="mb-6 md:mb-8">
                       <h3 className="text-xs md:text-sm text-[#666666] mb-2.5 md:mb-3">Методы оплаты</h3>
-                      <div className="grid grid-cols-3 gap-2.5 md:gap-3">
+                      <div className="grid grid-cols-2 gap-2.5 md:gap-3">
                         {/* Payme */}
                         <button
                           onClick={() => setPaymentMethod('payme')}
                           className={
-                            'border-2 bg-white rounded-md py-3 md:py-4 flex items-center justify-center font-bold relative text-sm md:text-lg transition-all duration-300 ' +
+                            'border bg-white rounded-md py-2.5 md:py-3 flex items-center justify-center gap-1.5 relative text-xs md:text-sm transition-all duration-300 ' +
                             (paymentMethod === 'payme' ? 'border-[#1A1A1A]' : 'border-gray-200 hover:border-[#1A1A1A]')
                           }
-                          style={{ color: '#38B2AC' }}
                         >
-                          <span className="italic">payme</span>
+                          <span className="italic font-semibold" style={{ color: '#38B2AC' }}>payme</span>
                           {paymentMethod === 'payme' && (
-                            <div
-                              className="absolute top-1 right-1 w-3.5 h-3.5 rounded-full flex items-center justify-center"
-                              style={{ backgroundColor: '#1A1A1A' }}
-                            >
-                              <svg viewBox="0 0 10 10" className="w-2.5 h-2.5 fill-white">
-                                <path d="M3.5 7.5L1.5 5.5L2.2 4.8L3.5 6.1L7.8 1.8L8.5 2.5L3.5 7.5Z" />
-                              </svg>
-                            </div>
-                          )}
-                        </button>
-                        {/* Uzum */}
-                        <button
-                          onClick={() => setPaymentMethod('uzum')}
-                          className={
-                            'border-2 bg-white rounded-md py-3 md:py-4 flex items-center justify-center font-bold relative text-sm md:text-lg transition-all duration-300 ' +
-                            (paymentMethod === 'uzum' ? 'border-[#1A1A1A]' : 'border-gray-200 hover:border-[#1A1A1A]')
-                          }
-                          style={{ color: '#7B2FF2' }}
-                        >
-                          uzum
-                          {paymentMethod === 'uzum' && (
-                            <div
-                              className="absolute top-1 right-1 w-3.5 h-3.5 rounded-full flex items-center justify-center"
-                              style={{ backgroundColor: '#1A1A1A' }}
-                            >
-                              <svg viewBox="0 0 10 10" className="w-2.5 h-2.5 fill-white">
-                                <path d="M3.5 7.5L1.5 5.5L2.2 4.8L3.5 6.1L7.8 1.8L8.5 2.5L3.5 7.5Z" />
-                              </svg>
+                            <div className="absolute top-1 right-1 w-3.5 h-3.5 rounded-full flex items-center justify-center bg-[#1A1A1A]">
+                              <svg viewBox="0 0 10 10" className="w-2.5 h-2.5 fill-white"><path d="M3.5 7.5L1.5 5.5L2.2 4.8L3.5 6.1L7.8 1.8L8.5 2.5L3.5 7.5Z" /></svg>
                             </div>
                           )}
                         </button>
@@ -1361,20 +1327,46 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                         <button
                           onClick={() => setPaymentMethod('click')}
                           className={
-                            'border-2 bg-white rounded-md py-3 md:py-4 flex items-center justify-center font-bold relative text-sm md:text-lg transition-all duration-300 ' +
+                            'border bg-white rounded-md py-2.5 md:py-3 flex items-center justify-center gap-1.5 relative text-xs md:text-sm transition-all duration-300 ' +
                             (paymentMethod === 'click' ? 'border-[#1A1A1A]' : 'border-gray-200 hover:border-[#1A1A1A]')
                           }
-                          style={{ color: '#3182CE' }}
                         >
-                          click
+                          <span className="font-semibold" style={{ color: '#3182CE' }}>click</span>
                           {paymentMethod === 'click' && (
-                            <div
-                              className="absolute top-1 right-1 w-3.5 h-3.5 rounded-full flex items-center justify-center"
-                              style={{ backgroundColor: '#1A1A1A' }}
-                            >
-                              <svg viewBox="0 0 10 10" className="w-2.5 h-2.5 fill-white">
-                                <path d="M3.5 7.5L1.5 5.5L2.2 4.8L3.5 6.1L7.8 1.8L8.5 2.5L3.5 7.5Z" />
-                              </svg>
+                            <div className="absolute top-1 right-1 w-3.5 h-3.5 rounded-full flex items-center justify-center bg-[#1A1A1A]">
+                              <svg viewBox="0 0 10 10" className="w-2.5 h-2.5 fill-white"><path d="M3.5 7.5L1.5 5.5L2.2 4.8L3.5 6.1L7.8 1.8L8.5 2.5L3.5 7.5Z" /></svg>
+                            </div>
+                          )}
+                        </button>
+                        {/* Наличные */}
+                        <button
+                          onClick={() => setPaymentMethod('cash')}
+                          className={
+                            'border bg-white rounded-md py-2.5 md:py-3 flex items-center justify-center gap-1.5 relative text-xs md:text-sm transition-all duration-300 ' +
+                            (paymentMethod === 'cash' ? 'border-[#1A1A1A]' : 'border-gray-200 hover:border-[#1A1A1A]')
+                          }
+                        >
+                          <Wallet className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#666666]" />
+                          <span className="font-medium text-[#1A1A1A]">Наличные</span>
+                          {paymentMethod === 'cash' && (
+                            <div className="absolute top-1 right-1 w-3.5 h-3.5 rounded-full flex items-center justify-center bg-[#1A1A1A]">
+                              <svg viewBox="0 0 10 10" className="w-2.5 h-2.5 fill-white"><path d="M3.5 7.5L1.5 5.5L2.2 4.8L3.5 6.1L7.8 1.8L8.5 2.5L3.5 7.5Z" /></svg>
+                            </div>
+                          )}
+                        </button>
+                        {/* Карта */}
+                        <button
+                          onClick={() => setPaymentMethod('card')}
+                          className={
+                            'border bg-white rounded-md py-2.5 md:py-3 flex items-center justify-center gap-1.5 relative text-xs md:text-sm transition-all duration-300 ' +
+                            (paymentMethod === 'card' ? 'border-[#1A1A1A]' : 'border-gray-200 hover:border-[#1A1A1A]')
+                          }
+                        >
+                          <ShoppingBag className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#666666]" />
+                          <span className="font-medium text-[#1A1A1A]">Карта</span>
+                          {paymentMethod === 'card' && (
+                            <div className="absolute top-1 right-1 w-3.5 h-3.5 rounded-full flex items-center justify-center bg-[#1A1A1A]">
+                              <svg viewBox="0 0 10 10" className="w-2.5 h-2.5 fill-white"><path d="M3.5 7.5L1.5 5.5L2.2 4.8L3.5 6.1L7.8 1.8L8.5 2.5L3.5 7.5Z" /></svg>
                             </div>
                           )}
                         </button>
