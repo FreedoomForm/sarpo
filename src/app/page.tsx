@@ -1220,18 +1220,19 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                         <div className="flex items-center">
                           <button
                             onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
-                            className="w-7 h-7 md:w-9 md:h-9 border border-gray-200 bg-white flex items-center justify-center hover:bg-gray-50 transition-colors text-xs md:text-sm rounded-none"
+                            className="w-7 h-7 md:w-9 md:h-9 border border-[#999999] bg-[#F2F2F2] flex items-center justify-center hover:bg-gray-200 transition-colors text-xs md:text-sm rounded-none text-[#1A1A1A]"
                           >
                             −
                           </button>
                           <div
-                            className="w-8 h-7 md:w-12 md:h-9 border-t border-b border-gray-200 bg-white flex items-center justify-center font-medium text-xs md:text-sm rounded-none"
+                            className="w-8 h-7 md:w-12 md:h-9 flex items-center justify-center font-medium text-xs md:text-sm rounded-none text-white"
+                            style={{ backgroundColor: '#1A1A1A' }}
                           >
                             {item.quantity}
                           </div>
                           <button
                             onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
-                            className="w-7 h-7 md:w-9 md:h-9 border border-gray-200 bg-white flex items-center justify-center hover:bg-gray-50 transition-colors text-xs md:text-sm rounded-none"
+                            className="w-7 h-7 md:w-9 md:h-9 border border-[#999999] bg-[#F2F2F2] flex items-center justify-center hover:bg-gray-200 transition-colors text-xs md:text-sm rounded-none text-[#1A1A1A]"
                           >
                             +
                           </button>
