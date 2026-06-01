@@ -636,7 +636,7 @@ function CatalogPage({
   const PRICE_MAX = 15000000;
   const [searchQuery, setSearchQuery] = useState(initialState?.search ?? '');
   const [selectedCollections, setSelectedCollections] = useState<string[]>(initialState?.selectedCollections ?? []);
-  const [sortOpen, setSortOpen] = useState(false);
+
   const [sortBy, setSortBy] = useState(initialState?.sortBy ?? 'newest');
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [priceMin, setPriceMin] = useState(initialState?.priceMin ?? PRICE_MIN);
@@ -819,36 +819,30 @@ function CatalogPage({
               </div>
             </div>
 
-            {/* Sort dropdown — on the right */}
-            <div className="relative">
-              <button
-                onClick={() => setSortOpen(!sortOpen)}
-                className="w-full sm:w-44 md:w-52 border border-gray-200 bg-white rounded-md p-2.5 md:p-3 flex justify-between items-center cursor-pointer"
-              >
-                <span className="text-xs md:text-sm text-[#1A1A1A]">
-                  {sortOptions.find((o) => o.value === sortBy)?.label || 'Сортировка'}
-                </span>
-                <ChevronDown className="w-3.5 h-3.5 md:w-4 md:h-4 text-gray-500" />
-              </button>
-              {sortOpen && (
-                <div className="absolute top-full left-0 w-full bg-white border border-gray-200 rounded-md mt-1 shadow-lg z-10">
-                  <ul className="py-2 text-xs md:text-sm text-[#1A1A1A]">
-                    {sortOptions.map((opt) => (
-                      <li key={opt.value}>
-                        <button
-                          onClick={() => { setSortBy(opt.value); setSortOpen(false); }}
-                          className="w-full px-3 md:px-4 py-2 hover:bg-[#F5F5F5] flex justify-between items-center text-left"
-                        >
-                          {opt.label}
-                          {sortBy === opt.value && (
-                            <span className="w-2.5 h-2.5 rounded-full bg-[#1A1A1A]" />
-                          )}
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+            {/* Sort — radio buttons */}
+            <div className="flex flex-col gap-2">
+              {sortOptions.map((opt) => (
+                <label key={opt.value} className="flex items-center gap-2.5 cursor-pointer group">
+                  <span
+                    className={`w-4 h-4 rounded-full border-2 flex items-center justify-center shrink-0 transition-colors ${
+                      sortBy === opt.value ? 'border-[#1A1A1A]' : 'border-[#999999] group-hover:border-[#1A1A1A]'
+                    }`}
+                  >
+                    {sortBy === opt.value && <span className="block w-2 h-2 rounded-full bg-[#1A1A1A]" />}
+                  </span>
+                  <span className={`text-xs md:text-sm transition-colors ${sortBy === opt.value ? 'text-[#1A1A1A] font-medium' : 'text-[#666666] group-hover:text-[#1A1A1A]'}`}>
+                    {opt.label}
+                  </span>
+                  <input
+                    type="radio"
+                    name="sort"
+                    value={opt.value}
+                    checked={sortBy === opt.value}
+                    onChange={() => setSortBy(opt.value)}
+                    className="sr-only"
+                  />
+                </label>
+              ))}
             </div>
           </div>
 
