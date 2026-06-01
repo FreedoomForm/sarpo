@@ -1150,7 +1150,7 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
   };
 
   return (
-    <div className="max-w-[1400px] mx-auto px-4 md:px-12 py-8 md:py-12">
+    <div className="max-w-[1400px] mx-auto px-4 md:px-12 py-8 md:py-12" style={{ backgroundColor: '#F5F5F5' }}>
       {onGoBack && <BackButton onBack={onGoBack} />}
       <div className="mb-8 md:mb-12">
         <h1 className="text-3xl md:text-4xl font-medium text-[#1A1A1A] mb-2">
@@ -1161,7 +1161,7 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
 
       <div className="flex flex-col gap-6 md:gap-8">
         {/* ── Section 1: Cart (Корзина) — expanded by default ── */}
-        <div className="bg-white shadow-sm rounded-md border border-gray-100 overflow-hidden">
+        <div className="bg-white rounded-md overflow-hidden">
           <button
             onClick={() => setCartExpanded(!cartExpanded)}
             className="w-full flex items-center justify-between px-4 md:px-6 py-4 md:py-5 hover:bg-gray-50 transition-colors"
@@ -1200,7 +1200,7 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                     {items.map((item) => (
                     <div
                       key={item.product.id}
-                      className="grid grid-cols-9 items-center text-xs md:text-sm gap-2 cursor-pointer hover:bg-[#FCF7F1] rounded-sm transition-colors -mx-1 px-1"
+                      className="grid grid-cols-9 items-center text-xs md:text-sm gap-2 cursor-pointer hover:bg-gray-50 rounded-sm transition-colors -mx-1 px-1"
                       onClick={() => onSelectProduct(item.product)}
                     >
                       {/* Photo */}
@@ -1223,21 +1223,18 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                         <div className="flex items-center">
                           <button
                             onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
-                            className="w-7 h-7 md:w-9 md:h-9 border flex items-center justify-center hover:bg-[#F2E5D5] transition-colors text-xs md:text-sm"
-                            style={{ backgroundColor: '#FCF7F1', borderColor: '#EDDCCC' }}
+                            className="w-7 h-7 md:w-9 md:h-9 border border-gray-200 bg-white flex items-center justify-center hover:bg-gray-50 transition-colors text-xs md:text-sm"
                           >
                             −
                           </button>
                           <div
-                            className="w-8 h-7 md:w-12 md:h-9 border-t border-b bg-white flex items-center justify-center font-medium text-xs md:text-sm"
-                            style={{ borderColor: '#EDDCCC' }}
+                            className="w-8 h-7 md:w-12 md:h-9 border-t border-b border-gray-200 bg-white flex items-center justify-center font-medium text-xs md:text-sm"
                           >
                             {item.quantity}
                           </div>
                           <button
                             onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
-                            className="w-7 h-7 md:w-9 md:h-9 border flex items-center justify-center hover:bg-[#F2E5D5] transition-colors text-xs md:text-sm"
-                            style={{ backgroundColor: '#FCF7F1', borderColor: '#EDDCCC' }}
+                            className="w-7 h-7 md:w-9 md:h-9 border border-gray-200 bg-white flex items-center justify-center hover:bg-gray-50 transition-colors text-xs md:text-sm"
                           >
                             +
                           </button>
@@ -1253,7 +1250,7 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                       <div className="col-span-1 flex justify-center items-center" onClick={(e) => e.stopPropagation()}>
                         <button
                           onClick={() => removeItem(item.product.id)}
-                          className="p-1.5 text-gray-400 hover:text-red-500 transition-colors"
+                          className="p-1.5 text-[#1A1A1A] hover:text-red-500 transition-colors"
                           aria-label="Удалить"
                         >
                           <Trash2 className="w-4 h-4 md:w-5 md:h-5" />
@@ -1279,8 +1276,7 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                 {items.length > 0 && (
                 <div className="w-full lg:w-[380px] md:w-[400px]">
                   <div
-                    className="p-5 md:p-8 rounded-md border border-gray-200 shadow-sm"
-                    style={{ backgroundColor: '#FCF7F1' }}
+                    className="p-5 md:p-8 rounded-md bg-white"
                   >
                     <div className="flex justify-between items-center mb-5 md:mb-6">
                       <h2 className="text-lg md:text-xl font-medium text-[#1A1A1A]">
@@ -1296,10 +1292,10 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                           placeholder="Имя"
                           value={customerName}
                           onChange={(e) => setCustomerName(e.target.value)}
-                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-md text-xs md:text-sm outline-none border border-[#EDDCCC] focus:ring-1 focus:ring-[#1A1A1A] focus:border-[#1A1A1A]"
-                          style={{ backgroundColor: '#FCF7F1' }}
+                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded text-xs md:text-sm outline-none border-0 focus:ring-1 focus:ring-[#1A1A1A]"
+                          style={{ backgroundColor: '#F0F0F0' }}
                         />
-                        <User className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-[#1A1A1A]" />
+                        <User className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-gray-400" />
                       </div>
                       <div className="relative">
                         <input
@@ -1307,10 +1303,10 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                           placeholder="Телефон"
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
-                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-md text-xs md:text-sm outline-none border border-[#EDDCCC] focus:ring-1 focus:ring-[#1A1A1A] focus:border-[#1A1A1A]"
-                          style={{ backgroundColor: '#FCF7F1' }}
+                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded text-xs md:text-sm outline-none border-0 focus:ring-1 focus:ring-[#1A1A1A]"
+                          style={{ backgroundColor: '#F0F0F0' }}
                         />
-                        <Phone className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-[#1A1A1A]" />
+                        <Phone className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-gray-400" />
                       </div>
                       <div className="relative">
                         <input
@@ -1318,10 +1314,10 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                           placeholder="Адрес"
                           value={address}
                           onChange={(e) => setAddress(e.target.value)}
-                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-md text-xs md:text-sm outline-none border border-[#EDDCCC] focus:ring-1 focus:ring-[#1A1A1A] focus:border-[#1A1A1A]"
-                          style={{ backgroundColor: '#FCF7F1' }}
+                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded text-xs md:text-sm outline-none border-0 focus:ring-1 focus:ring-[#1A1A1A]"
+                          style={{ backgroundColor: '#F0F0F0' }}
                         />
-                        <MapPin className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-[#1A1A1A]" />
+                        <MapPin className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-gray-400" />
                       </div>
                     </div>
 
@@ -1332,8 +1328,8 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                         <button
                           onClick={() => setPaymentMethod('payme')}
                           className={
-                            'border bg-white rounded-md py-2.5 md:py-3 flex items-center justify-center gap-1.5 relative text-xs md:text-sm transition-all duration-300 ' +
-                            (paymentMethod === 'payme' ? 'border-[#1A1A1A]' : 'border-gray-200 hover:border-[#1A1A1A]')
+                            'rounded-md py-2.5 md:py-3 flex items-center justify-center gap-1.5 relative text-xs md:text-sm transition-all duration-300 ' +
+                            (paymentMethod === 'payme' ? 'bg-white border border-[#1A1A1A]' : 'bg-[#F0F0F0] border-0 hover:bg-gray-200')
                           }
                         >
                           <span className="italic font-semibold" style={{ color: '#38B2AC' }}>payme</span>
@@ -1347,8 +1343,8 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                         <button
                           onClick={() => setPaymentMethod('click')}
                           className={
-                            'border bg-white rounded-md py-2.5 md:py-3 flex items-center justify-center gap-1.5 relative text-xs md:text-sm transition-all duration-300 ' +
-                            (paymentMethod === 'click' ? 'border-[#1A1A1A]' : 'border-gray-200 hover:border-[#1A1A1A]')
+                            'rounded-md py-2.5 md:py-3 flex items-center justify-center gap-1.5 relative text-xs md:text-sm transition-all duration-300 ' +
+                            (paymentMethod === 'click' ? 'bg-white border border-[#1A1A1A]' : 'bg-[#F0F0F0] border-0 hover:bg-gray-200')
                           }
                         >
                           <span className="font-semibold" style={{ color: '#3182CE' }}>click</span>
@@ -1362,8 +1358,8 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                         <button
                           onClick={() => setPaymentMethod('cash')}
                           className={
-                            'border bg-white rounded-md py-2.5 md:py-3 flex items-center justify-center gap-1.5 relative text-xs md:text-sm transition-all duration-300 ' +
-                            (paymentMethod === 'cash' ? 'border-[#1A1A1A]' : 'border-gray-200 hover:border-[#1A1A1A]')
+                            'rounded-md py-2.5 md:py-3 flex items-center justify-center gap-1.5 relative text-xs md:text-sm transition-all duration-300 ' +
+                            (paymentMethod === 'cash' ? 'bg-white border border-[#1A1A1A]' : 'bg-[#F0F0F0] border-0 hover:bg-gray-200')
                           }
                         >
                           <Wallet className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#666666]" />
@@ -1378,8 +1374,8 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                         <button
                           onClick={() => setPaymentMethod('card')}
                           className={
-                            'border bg-white rounded-md py-2.5 md:py-3 flex items-center justify-center gap-1.5 relative text-xs md:text-sm transition-all duration-300 ' +
-                            (paymentMethod === 'card' ? 'border-[#1A1A1A]' : 'border-gray-200 hover:border-[#1A1A1A]')
+                            'rounded-md py-2.5 md:py-3 flex items-center justify-center gap-1.5 relative text-xs md:text-sm transition-all duration-300 ' +
+                            (paymentMethod === 'card' ? 'bg-white border border-[#1A1A1A]' : 'bg-[#F0F0F0] border-0 hover:bg-gray-200')
                           }
                         >
                           <ShoppingBag className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#666666]" />
