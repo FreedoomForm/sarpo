@@ -1200,7 +1200,7 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                     {items.map((item) => (
                     <div
                       key={item.product.id}
-                      className="grid grid-cols-9 items-center text-xs md:text-sm gap-2 cursor-pointer hover:bg-[#F5F5F5] rounded-sm transition-colors -mx-1 px-1"
+                      className="grid grid-cols-9 items-center text-xs md:text-sm gap-2 cursor-pointer hover:bg-[#FCF7F1] rounded-sm transition-colors -mx-1 px-1"
                       onClick={() => onSelectProduct(item.product)}
                     >
                       {/* Photo */}
@@ -1223,18 +1223,21 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                         <div className="flex items-center">
                           <button
                             onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
-                            className="w-7 h-7 md:w-9 md:h-9 border border-gray-300 bg-white flex items-center justify-center hover:bg-gray-100 transition-colors text-xs md:text-sm"
+                            className="w-7 h-7 md:w-9 md:h-9 border flex items-center justify-center hover:bg-[#F2E5D5] transition-colors text-xs md:text-sm"
+                            style={{ backgroundColor: '#FCF7F1', borderColor: '#EDDCCC' }}
                           >
                             −
                           </button>
                           <div
-                            className="w-8 h-7 md:w-12 md:h-9 border-t border-b border-gray-300 bg-white flex items-center justify-center font-medium text-xs md:text-sm"
+                            className="w-8 h-7 md:w-12 md:h-9 border-t border-b bg-white flex items-center justify-center font-medium text-xs md:text-sm"
+                            style={{ borderColor: '#EDDCCC' }}
                           >
                             {item.quantity}
                           </div>
                           <button
                             onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
-                            className="w-7 h-7 md:w-9 md:h-9 border border-gray-300 bg-white flex items-center justify-center hover:bg-gray-100 transition-colors text-xs md:text-sm"
+                            className="w-7 h-7 md:w-9 md:h-9 border flex items-center justify-center hover:bg-[#F2E5D5] transition-colors text-xs md:text-sm"
+                            style={{ backgroundColor: '#FCF7F1', borderColor: '#EDDCCC' }}
                           >
                             +
                           </button>
@@ -1276,7 +1279,8 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                 {items.length > 0 && (
                 <div className="w-full lg:w-[380px] md:w-[400px]">
                   <div
-                    className="p-5 md:p-8 rounded-md border border-gray-200 shadow-sm bg-white"
+                    className="p-5 md:p-8 rounded-md border border-gray-200 shadow-sm"
+                    style={{ backgroundColor: '#FCF7F1' }}
                   >
                     <div className="flex justify-between items-center mb-5 md:mb-6">
                       <h2 className="text-lg md:text-xl font-medium text-[#1A1A1A]">
@@ -1292,9 +1296,10 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                           placeholder="Имя"
                           value={customerName}
                           onChange={(e) => setCustomerName(e.target.value)}
-                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-md text-xs md:text-sm outline-none border border-gray-200 focus:ring-1 focus:ring-[#1A1A1A] focus:border-[#1A1A1A] bg-white"
+                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-md text-xs md:text-sm outline-none border border-[#EDDCCC] focus:ring-1 focus:ring-[#1A1A1A] focus:border-[#1A1A1A]"
+                          style={{ backgroundColor: '#FCF7F1' }}
                         />
-                        <User className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-gray-400" />
+                        <User className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-[#1A1A1A]" />
                       </div>
                       <div className="relative">
                         <input
@@ -1302,9 +1307,10 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                           placeholder="Телефон"
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
-                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-md text-xs md:text-sm outline-none border border-gray-200 focus:ring-1 focus:ring-[#1A1A1A] focus:border-[#1A1A1A] bg-white"
+                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-md text-xs md:text-sm outline-none border border-[#EDDCCC] focus:ring-1 focus:ring-[#1A1A1A] focus:border-[#1A1A1A]"
+                          style={{ backgroundColor: '#FCF7F1' }}
                         />
-                        <Phone className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-gray-400" />
+                        <Phone className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-[#1A1A1A]" />
                       </div>
                       <div className="relative">
                         <input
@@ -1312,9 +1318,10 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                           placeholder="Адрес"
                           value={address}
                           onChange={(e) => setAddress(e.target.value)}
-                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-md text-xs md:text-sm outline-none border border-gray-200 focus:ring-1 focus:ring-[#1A1A1A] focus:border-[#1A1A1A] bg-white"
+                          className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-md text-xs md:text-sm outline-none border border-[#EDDCCC] focus:ring-1 focus:ring-[#1A1A1A] focus:border-[#1A1A1A]"
+                          style={{ backgroundColor: '#FCF7F1' }}
                         />
-                        <MapPin className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-gray-400" />
+                        <MapPin className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-[#1A1A1A]" />
                       </div>
                     </div>
 
