@@ -792,66 +792,63 @@ function CatalogPage({
         <div className="flex-1">
           {/* Search, Filter Button, and Sort Row */}
           <div className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center mb-5 md:mb-6 gap-3 md:gap-6">
-            <div className="flex-1 relative">
-              <input
-                type="text"
-                placeholder="Поиск продуктов"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-white text-[#1A1A1A] text-xs md:text-sm rounded-md pl-9 md:pl-10 pr-4 py-2.5 md:py-3 outline-none border border-gray-200 focus:ring-1 focus:ring-[#1A1A1A] focus:border-[#1A1A1A]"
-              />
-              <Search className="absolute left-3 md:left-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-gray-400" />
-            </div>
-
-            <div className="flex gap-3">
-              {/* Filter toggle button — same style as sort */}
+            <div className="flex items-center gap-3 flex-1">
+              {/* Filter toggle button — on the left */}
               <button
                 onClick={() => setFiltersOpen(!filtersOpen)}
-                className={`border bg-white rounded-md p-2.5 md:p-3 flex items-center gap-2 cursor-pointer transition-colors ${
+                className={`border bg-white rounded-md p-2.5 md:p-3 flex items-center gap-2 cursor-pointer transition-colors shrink-0 ${
                   filtersOpen
                     ? 'border-[#1A1A1A] text-[#1A1A1A]'
                     : 'border-gray-200 text-[#1A1A1A] hover:border-[#1A1A1A]'
                 }`}
               >
-                <span className="text-xs md:text-sm">Фильтры</span>
-                {filtersOpen ? (
-                  <ChevronUp className="w-3.5 h-3.5 md:w-4 md:h-4" />
-                ) : (
-                  <ChevronDown className="w-3.5 h-3.5 md:w-4 md:h-4 text-gray-500" />
-                )}
+                <SlidersHorizontal className="w-3.5 h-3.5 md:w-4 md:h-4" />
+                <span className="text-xs md:text-sm hidden sm:inline">Фильтры</span>
               </button>
 
-              {/* Sort dropdown */}
-              <div className="relative">
-                <button
-                  onClick={() => setSortOpen(!sortOpen)}
-                  className="w-full sm:w-44 md:w-52 border border-gray-200 bg-white rounded-md p-2.5 md:p-3 flex justify-between items-center cursor-pointer"
-                >
-                  <span className="text-xs md:text-sm text-[#1A1A1A]">
-                    {sortOptions.find((o) => o.value === sortBy)?.label || 'Сортировка'}
-                  </span>
-                  <ChevronDown className="w-3.5 h-3.5 md:w-4 md:h-4 text-gray-500" />
-                </button>
-                {sortOpen && (
-                  <div className="absolute top-full left-0 w-full bg-white border border-gray-200 rounded-md mt-1 shadow-lg z-10">
-                    <ul className="py-2 text-xs md:text-sm text-[#1A1A1A]">
-                      {sortOptions.map((opt) => (
-                        <li key={opt.value}>
-                          <button
-                            onClick={() => { setSortBy(opt.value); setSortOpen(false); }}
-                            className="w-full px-3 md:px-4 py-2 hover:bg-[#F5F5F5] flex justify-between items-center text-left"
-                          >
-                            {opt.label}
-                            {sortBy === opt.value && (
-                              <span className="w-2.5 h-2.5 rounded-full bg-[#1A1A1A]" />
-                            )}
-                          </button>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
+              {/* Search */}
+              <div className="flex-1 relative">
+                <input
+                  type="text"
+                  placeholder="Поиск продуктов"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full bg-white text-[#1A1A1A] text-xs md:text-sm rounded-md pl-9 md:pl-10 pr-4 py-2.5 md:py-3 outline-none border border-gray-200 focus:ring-1 focus:ring-[#1A1A1A] focus:border-[#1A1A1A]"
+                />
+                <Search className="absolute left-3 md:left-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-gray-400" />
               </div>
+            </div>
+
+            {/* Sort dropdown — on the right */}
+            <div className="relative">
+              <button
+                onClick={() => setSortOpen(!sortOpen)}
+                className="w-full sm:w-44 md:w-52 border border-gray-200 bg-white rounded-md p-2.5 md:p-3 flex justify-between items-center cursor-pointer"
+              >
+                <span className="text-xs md:text-sm text-[#1A1A1A]">
+                  {sortOptions.find((o) => o.value === sortBy)?.label || 'Сортировка'}
+                </span>
+                <ChevronDown className="w-3.5 h-3.5 md:w-4 md:h-4 text-gray-500" />
+              </button>
+              {sortOpen && (
+                <div className="absolute top-full left-0 w-full bg-white border border-gray-200 rounded-md mt-1 shadow-lg z-10">
+                  <ul className="py-2 text-xs md:text-sm text-[#1A1A1A]">
+                    {sortOptions.map((opt) => (
+                      <li key={opt.value}>
+                        <button
+                          onClick={() => { setSortBy(opt.value); setSortOpen(false); }}
+                          className="w-full px-3 md:px-4 py-2 hover:bg-[#F5F5F5] flex justify-between items-center text-left"
+                        >
+                          {opt.label}
+                          {sortBy === opt.value && (
+                            <span className="w-2.5 h-2.5 rounded-full bg-[#1A1A1A]" />
+                          )}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
 
