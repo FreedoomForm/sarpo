@@ -129,7 +129,7 @@ function Header({ onNavigate, currentPage, onSearch, onCollectionNavigate, onCon
               <img
                 src="/images/siluette_logo.png"
                 alt="SILUET BASIC"
-                className="h-7 md:h-9 w-auto select-none"
+                className="h-8 md:h-10 w-auto select-none"
                 draggable={false}
               />
 
@@ -1060,6 +1060,7 @@ function ProductPage({
 function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page: PageView) => void; onSelectProduct: (product: Product) => void; onGoBack?: () => void }) {
   const items = useCartStore((s) => s.items);
   const updateQuantity = useCartStore((s) => s.updateQuantity);
+  const removeItem = useCartStore((s) => s.removeItem);
   const moveToCompleted = useCartStore((s) => s.moveToCompleted);
   const completedOrders = useCartStore((s) => s.completedOrders);
   const total = useCartStore((s) => s.items.reduce((sum, item) => sum + item.product.price * item.quantity, 0));
@@ -1187,18 +1188,19 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                 {/* Cart Items Table */}
                 <div className="flex-1">
                   {/* Table header */}
-                  <div className="hidden md:grid grid-cols-8 text-xs md:text-sm font-medium text-[#1A1A1A] border-b border-gray-200 pb-3 md:pb-4 mb-3 md:mb-4">
+                  <div className="hidden md:grid grid-cols-9 text-xs md:text-sm font-medium text-[#1A1A1A] border-b border-gray-200 pb-3 md:pb-4 mb-3 md:mb-4">
                     <div className="col-span-1">Фото</div>
                     <div className="col-span-3">Наименование продукта</div>
                     <div className="col-span-2 text-center">Количество</div>
                     <div className="col-span-2 text-center">Общая сумма</div>
+                    <div className="col-span-1"></div>
                   </div>
 
                   <div className="space-y-4 md:space-y-6">
                     {items.map((item) => (
                     <div
                       key={item.product.id}
-                      className="grid grid-cols-8 items-center text-xs md:text-sm gap-2 cursor-pointer hover:bg-[#F5F5F5] rounded-sm transition-colors -mx-1 px-1"
+                      className="grid grid-cols-9 items-center text-xs md:text-sm gap-2 cursor-pointer hover:bg-[#F5F5F5] rounded-sm transition-colors -mx-1 px-1"
                       onClick={() => onSelectProduct(item.product)}
                     >
                       {/* Photo */}
@@ -1243,6 +1245,16 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                         <span className="text-sm md:text-lg font-medium text-[#1A1A1A]">
                           {formatPrice(item.product.price * item.quantity)}
                         </span>
+                      </div>
+                      {/* Delete */}
+                      <div className="col-span-1 flex justify-center items-center" onClick={(e) => e.stopPropagation()}>
+                        <button
+                          onClick={() => removeItem(item.product.id)}
+                          className="p-1.5 text-gray-400 hover:text-red-500 transition-colors"
+                          aria-label="Удалить"
+                        >
+                          <Trash2 className="w-4 h-4 md:w-5 md:h-5" />
+                        </button>
                       </div>
                     </div>
                     ))}
