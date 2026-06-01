@@ -1401,6 +1401,15 @@ function CartPage({ onNavigate, onSelectProduct, onGoBack }: { onNavigate: (page
                       </span>
                     </div>
 
+                    {/* Связаться с оператором */}
+                    <button
+                      onClick={() => window.open('tel:+998901234567')}
+                      className="w-full flex items-center justify-center gap-2 py-3 md:py-4 font-medium rounded-md transition-all duration-300 tracking-wide border-2 border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white mb-3"
+                    >
+                      <Phone className="w-4 h-4 md:w-5 md:h-5" />
+                      Связаться с оператором
+                    </button>
+
                     <button
                       onClick={handleOrder}
                       disabled={orderLoading || items.length === 0}
