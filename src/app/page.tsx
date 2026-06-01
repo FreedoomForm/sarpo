@@ -638,7 +638,6 @@ function CatalogPage({
   const [selectedCollections, setSelectedCollections] = useState<string[]>(initialState?.selectedCollections ?? []);
   const [sortOpen, setSortOpen] = useState(false);
   const [sortBy, setSortBy] = useState(initialState?.sortBy ?? 'newest');
-  const [filtersOpen, setFiltersOpen] = useState(false);
   const [priceMin, setPriceMin] = useState(initialState?.priceMin ?? PRICE_MIN);
   const [priceMax, setPriceMax] = useState(initialState?.priceMax ?? PRICE_MAX);
 
@@ -774,44 +773,24 @@ function CatalogPage({
       </div>
 
       <div className="flex gap-6 md:gap-10 flex-col md:flex-row">
-        {/* Sidebar — only takes space when open */}
-        {filtersOpen && (
-          <aside className="w-full md:w-56 lg:w-64 flex-shrink-0">
-            <button
-              onClick={() => setFiltersOpen(!filtersOpen)}
-              className="flex items-center justify-between w-full mb-5 md:mb-6 text-[#1A1A1A] bg-white rounded-md px-3 py-2.5 md:py-3 border border-gray-200 hover:border-[#1A1A1A] transition-colors cursor-pointer"
-            >
-              <span className="text-xs md:text-sm text-[#1A1A1A]">Фильтры</span>
-              <ChevronUp className="w-3.5 h-3.5 md:w-4 md:h-4 text-gray-500" />
-            </button>
-            {filterContent}
-          </aside>
-        )}
+        {/* Sidebar — always visible */}
+        <aside className="w-full md:w-56 lg:w-64 flex-shrink-0">
+          {filterContent}
+        </aside>
 
         {/* Main Content */}
         <div className="flex-1">
-          {/* Search, Filter Button, and Sort Row */}
+          {/* Search and Sort Row */}
           <div className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center mb-5 md:mb-6 gap-3 md:gap-6">
-            <div className="flex items-center gap-3 flex-1">
-              <div className="flex-1 relative">
-                <input
-                  type="text"
-                  placeholder="Поиск продуктов"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-white text-[#1A1A1A] text-xs md:text-sm rounded-md pl-9 md:pl-10 pr-4 py-2.5 md:py-3 outline-none border border-gray-200 focus:ring-1 focus:ring-[#1A1A1A] focus:border-[#1A1A1A]"
-                />
-                <Search className="absolute left-3 md:left-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-gray-400" />
-              </div>
-              {!filtersOpen && (
-                <button
-                  onClick={() => setFiltersOpen(true)}
-                  className="border border-gray-200 bg-white rounded-md p-2.5 md:p-3 flex items-center gap-2 cursor-pointer hover:border-[#1A1A1A] transition-colors shrink-0"
-                >
-                  <SlidersHorizontal className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#1A1A1A]" />
-                  <span className="text-xs md:text-sm text-[#1A1A1A] hidden sm:inline">Фильтры</span>
-                </button>
-              )}
+            <div className="flex-1 relative">
+              <input
+                type="text"
+                placeholder="Поиск продуктов"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full bg-white text-[#1A1A1A] text-xs md:text-sm rounded-md pl-9 md:pl-10 pr-4 py-2.5 md:py-3 outline-none border border-gray-200 focus:ring-1 focus:ring-[#1A1A1A] focus:border-[#1A1A1A]"
+              />
+              <Search className="absolute left-3 md:left-4 top-1/2 -translate-y-1/2 w-3.5 h-3.5 md:w-4 md:h-4 text-gray-400" />
             </div>
 
             {/* Sort dropdown — on the right */}
